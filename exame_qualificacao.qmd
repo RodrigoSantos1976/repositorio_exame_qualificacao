@@ -50,7 +50,22 @@ Sexta e última seção a ser escrita.
 
 # Justificativa {#sec-justificativa}
 
-Segunda seção a ser escrita.
+Segunda seção a ser escrita
+  
+A relevância deste estudo se sustenta tanto sob a perspectiva acadêmica quanto sob a perspectiva prática, considerando a necessidade de aprofundamento teórico e o impacto direto na tomada de decisão dos investidores.  
+
+## Ponto de vista acadêmico 
+A literatura sobre value investing tem sido amplamente explorada em mercados desenvolvidos, mas ainda há lacunas na investigação de sua aplicabilidade e eficiência no contexto do mercado brasileiro. Pesquisas anteriores analisam a relação entre métricas fundamentalistas e desempenho de longo prazo, mas há uma necessidade crescente de avaliar metodologias de seleção de ativos à luz de novos modelos econométricos e de gestão de risco.  
+
+Além disso, a investigação de metodologias alternativas permite a integração entre diferentes áreas do conhecimento, como finanças, estatística e economia comportamental, contribuindo para uma abordagem mais robusta na identificação de ativos subvalorizados. O estudo também pode dialogar com teorias clássicas de finanças, como a Hipótese dos Mercados Eficientes (EMH), e com abordagens mais recentes que questionam a eficiência absoluta dos preços de mercado.  
+
+## Ponto de vista prático 
+Do ponto de vista do investidor, a seleção eficiente de ativos continua sendo um dos desafios centrais na busca por retornos superiores ajustados ao risco. A volatilidade do mercado financeiro e a diversidade de ativos disponíveis tornam essencial o desenvolvimento de critérios mais precisos para a alocação de capital.  
+
+Neste sentido, a pesquisa busca oferecer ferramentas baseadas em fundamentos sólidos, permitindo aos investidores otimizar suas decisões e minimizar riscos. A aplicação de novas metodologias pode fornecer uma abordagem mais sistemática na identificação de oportunidades de investimento, reduzindo a dependência de vieses subjetivos e maximizando a eficiência do processo decisório.  
+
+Em suma, este estudo visa contribuir tanto para a academia, ao explorar metodologias inovadoras e integrar diferentes áreas do conhecimento, quanto para o mercado financeiro, ao fornecer insights práticos para investidores que buscam aprimorar suas estratégias de seleção de ativos.  
+
 
 
 
@@ -61,10 +76,30 @@ Terceira seção a ser escrita.
 
 ## Objetivo Geral {#sec-objgeral}
 
+O presente estudo tem como objetivo avaliar o excesso de retorno gerado por estratégias de value investing no mercado brasileiro, comparando os resultados obtidos com diferentes métricas de avaliação de ativos. Para isso, será utilizada uma nova unidade de medida baseada na fórmula de Graham. A nova métrica utilizada será definida pela equação $\sqrt{22.5 \times LPA \times VPA}$.Seus resultados serão contrastados com os achados do estudo de Pallazo. A pesquisa busca verificar se essa nova abordagem apresenta maior eficiência na seleção de ativos subvalorizados e na predição de retornos superiores ao mercado.
 
 ## Objetivos Específicos {#sec-objespecficos}
 
+Artigo 1: Revisão de Literatura e Análise Bibliométrica sobre Value Investing
+O primeiro artigo tem como objetivo realizar uma revisão sistemática da literatura e uma análise bibliométrica sobre value investing, investigando sua evolução teórica e empírica ao longo do tempo. A revisão abordará os principais estudos que analisam a eficácia dessa estratégia, suas bases conceituais e metodológicas, e as evidências de excesso de retorno gerado por ativos considerados subvalorizados.
 
+Metodologia
+
+Base de dados Web of Science e ..... Brasil ???????
+
+Chave de pesquisa: TITLE-ABS-KEY "Value Investing"
+
+Análise dos resultados 
+
+Considerações sobre o produto 1
+
+Evidências empíricas de retornos superiores – Diversos estudos demonstram que carteiras baseadas em métricas de valuation, como P/L (Preço/Lucro), P/VPA (Preço/Valor Patrimonial) e dividend yield, tendem a superar os retornos de carteiras de crescimento no longo prazo. Trabalhos como @fama1992cross confirmam a existência do chamado "value premium".
+
+Artigo 2 Revisão - intrinsic value
+
+Artigo 3 investigação do modelo proposto por palazzo usando filtro de graham 
+
+Produto 4 - Carteira de Graham adaptada ao Brasil 
 
 
 
@@ -72,9 +107,16 @@ Terceira seção a ser escrita.
 
 Primeira seção a ser escrita.
 
-Exemplo de citação: @cruz_gonzalez_2017
+Investimento em valor (Value Investing) é uma estratégia de investimento baseada na análise fundamentalista de empresas, buscando ativos que são negociados abaixo de seu valor intrínseco. @graham1934security foram os primeiros a propor essa metodologia, na qual investidores "de valor" procuram identificar ações ou outros ativos subvalorizados pelo mercado, com potencial de valorização no longo prazo. Essa estratégia envolve a avaliação de indicadores financeiros, como o índice preço sobre valor patrimonial (price-to-book ratio), o índice preço sobre lucro (price-to-earnings ratio) e outros critérios fundamentais.
+
+O investimento em valor parte do pressuposto de que o mercado nem sempre é eficiente e que existem oportunidades de investimento em ativos subvalorizados em relação ao seu valor intrínseco. Se o mercado fosse completamente eficiente, seria desafiador encontrar ativos subvalorizados, pois todas as informações relevantes já estariam refletidas nos preços. No entanto, os defensores do investimento em valor argumentam que o mercado não é perfeitamente eficiente e que os investidores podem identificar oportunidades de investimento por meio da análise fundamentalista. Essa perspectiva implica que os preços dos ativos podem não refletir totalmente as informações disponíveis ou que os investidores podem subestimar ou superestimar o valor de um ativo, permitindo que investidores de valor encontrem oportunidades de investimento.
+
+Graham é comumente conhecido como o pai da estratégia no contexto do value investing e, em seu primeiro livro, Security Analysis, @graham1934security cunharam o termo "Margem de Segurança" (Margin of Safety). Segundo Graham, quanto menor o preço de compra de uma empresa em relação ao seu valor intrínseco, maior será a Margem de Segurança.
+
+Em seu segundo livro, The Intelligent Investor, publicado pela primeira vez em 1949, Graham e Zweig (2003) apresentam um guia conciso para ajudar investidores em suas estratégias de investimento, aconselhando a evitar erros substanciais e buscando retornos satisfatórios no longo prazo. Além disso, @graham2003intelligent sugerem a aplicação de certos filtros ao analisar balanços patrimoniais para identificar empresas com as seguintes características: balanços sólidos, lucratividade e subavaliação. Muitos estudos mostram que investir em ativos com baixos índices preço sobre valor patrimonial (P/B) e preço sobre lucro (P/E), alta liquidez corrente e pagamentos consistentes de dividendos frequentemente chamadas de "ações de valor" (value stocks) oferece retornos superiores àqueles com índices mais altos.
 
 
+Devo resumir os meus resultados da minha revisão de literatura nesta seção???
 
 
 
