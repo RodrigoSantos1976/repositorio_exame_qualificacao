@@ -27,6 +27,7 @@ format:
     tbl-cap-location: top
     lof: false
     lot: false
+    link-citations: true
 execute: 
   echo: false
   warning: false
@@ -40,72 +41,105 @@ editor: source
 ---
 
 
+
+
 # Introdução {#sec-introducao}
 
-Sexta e última seção a ser escrita.
 
+A tomada de decisão no mercado de capitais, especialmente no que se refere à seleção de ações, é uma das tarefas mais complexas e cruciais para investidores que buscam retornos consistentes no longo prazo. Essa dificuldade é ainda mais acentuada em mercados emergentes como o brasileiro, onde fatores como volatilidade macroeconômica, assimetria informacional e instabilidade institucional desafiam a eficiência dos métodos tradicionais de avaliação de ativos. Nesse contexto, estratégias fundamentadas em análise fundamentalista, como o value investing, tornam-se especialmente relevantes por sua capacidade de identificar oportunidades mal precificadas pelo mercado.
 
+Originalmente formulado por @graham1934security, o value investing baseia-se na ideia de que é possível obter retornos superiores ao identificar e adquirir ativos cujo valor de mercado se encontra abaixo de seu valor intrínseco.Entende-se como valor intrínseco a egistimativa do valor real de uma empresa, calculada com base em indicadores como lucros, patrimônio líquido e fluxo de caixa. Serve como referência para decidir se uma ação está cara ou barata. A relevância desse modelo ultrapassa o campo teórico e se manifesta na prática de investidores institucionais e individuais, sendo particularmente atrativo em mercados como o Brasil, onde as distorções de preço são mais frequentes. Apesar disso, a aplicação da fórmula de valor intrínseco proposta por Graham é raramente testada empiricamente na literatura nacional, o que evidencia uma lacuna de pesquisa relevante.
 
+Neste estudo, propõe-se justamente preencher essa lacuna ao avaliar se uma métrica alternativa baseada na fórmula de Graham, construída a partir de indicadores de rentabilidade e patrimônio, é capaz de gerar retornos superiores em comparação aos filtros fundamentalistas adaptados por @palazzo2018carteiras . A pergunta de pesquisa que norteia esta investigação é:
+“Uma métrica baseada na estimativa do valor intrínseco proposta por Graham apresenta maior eficiência na seleção de ações no mercado brasileiro do que os filtros tradicionais adaptados por @palazzo2018carteiras”
+Para responder a essa questão, serão formadas carteiras de ações com base nas duas abordagens — os filtros de Palazzo e a métrica alternativa inspirada na fórmula de Graham — e seus desempenhos serão comparados a partir de indicadores de retorno e risco.
 
+Estudos anteriores, como os de @salgueiro2007comparacao, @pinheiro2009value, @rodrigues2020eficacia e o próprio @palazzo2018carteiras, demonstraram que estratégias baseadas em múltiplos fundamentalistas tendem a superar os benchmarks tradicionais como o Ibovespa. No entanto, esses trabalhos utilizam filtros simplificados e não exploram diretamente modelos formais de valuation, como a fórmula do valor intrínseco de Graham. Este estudo, portanto, busca avançar a literatura ao testar essa abordagem em um cenário empírico nacional, contribuindo com evidências inéditas sobre sua eficácia.
+
+Além da contribuição empírica, o presente trabalho também se propõe a gerar um impacto prático e educacional. Como parte dos resultados aplicados, será desenvolvido o GrahamLab, um aplicativo educacional interativo que permitirá a simulação e o acompanhamento do desempenho das carteiras formadas. A ferramenta visa democratizar o acesso ao conhecimento sobre estratégias de investimento baseadas em valor, tornando o conteúdo acessível a estudantes, professores e investidores iniciantes. O GrahamLab contribuirá, assim, para o fortalecimento da educação financeira com base em critérios técnicos e fundamentos de longo prazo.
+
+Além desta introdução, este documento está estruturado da seguinte forma: a @sec-justificativa contém a justificativa do projeto de dissertação; a @sec-objetivos apresenta o objetivo geral (@sec-objgeral) e 
+específicos (@sec-objespecficos); a @sec-revisao mostra a revisão 
+da literatura realizada; a @sec-metodologia descreve a metodologia 
+proposta e os dados a serem utilizados. Por fim, a @sec-esperados aborda 
+os resultados esperados da execução do projeto e a @sec-cronograma exibe 
+um planejamento para a execução das próximas etapas do projeto.
 
 # Justificativa {#sec-justificativa}
 
-Segunda seção a ser escrita
   
-A relevância deste estudo se sustenta tanto sob a perspectiva acadêmica quanto sob a perspectiva prática, considerando a necessidade de aprofundamento teórico e o impacto direto na tomada de decisão dos investidores.  
+A pesquisa busca avaliar empiricamente a eficácia de filtros de value investing adaptados ao mercado nacional, contribuindo com evidências práticas que podem auxiliar investidores na identificação de ativos subvalorizados e propondo uma aplicação educacional inovadora que aproxima teoria e prática  
 
 ## Ponto de vista acadêmico 
-A literatura sobre value investing tem sido amplamente explorada em mercados desenvolvidos, mas ainda há lacunas na investigação de sua aplicabilidade e eficiência no contexto do mercado brasileiro. Pesquisas anteriores analisam a relação entre métricas fundamentalistas e desempenho de longo prazo, mas há uma necessidade crescente de avaliar metodologias de seleção de ativos à luz de novos modelos econométricos e de gestão de risco.  
 
-Além disso, a investigação de metodologias alternativas permite a integração entre diferentes áreas do conhecimento, como finanças, estatística e economia comportamental, contribuindo para uma abordagem mais robusta na identificação de ativos subvalorizados. O estudo também pode dialogar com teorias clássicas de finanças, como a Hipótese dos Mercados Eficientes (EMH), e com abordagens mais recentes que questionam a eficiência absoluta dos preços de mercado.  
+A literatura sobre value investing tem sido amplamente explorada em mercados desenvolvidos, especialmente nos Estados Unidos, onde há uma sólida tradição de estudos relacionando métricas fundamentalistas ao desempenho de ações no longo prazo. No entanto, sua aplicação empírica no mercado brasileiro permanece limitada, sobretudo no que se refere ao uso direto da fórmula de valor intrínseco originalmente proposta por Graham. Enquanto trabalhos como o de @palazzo2018carteiras adaptaram os filtros clássicos de Graham à realidade brasileira, eles não testaram de forma sistemática a métrica de valor intrínseco como critério central na seleção de ações.
+
+A opção por utilizar métricas baseadas em fundamentos presentes, como a fórmula de Graham, é apoiada por @greenwald2001value que criticam os métodos tradicionais, como o DCF, por sua alta dependência de premissas incertas. Em vez disso, os autores sugerem que o foco na geração atual de valor — mensurado por EPV e valor dos ativos — oferece maior robustez analítica, especialmente em ambientes voláteis.
+
+
+
+Apesar de ser amplamente reconhecida na literatura internacional, a fórmula de Graham permanece inexplorada empiricamente no Brasil, o que configura uma inovação metodológica relevante. A métrica proposta neste estudo busca preencher essa lacuna ao integrar simultaneamente indicadores de rentabilidade e de patrimônio, criando uma medida alternativa que poderá ser comparada aos filtros tradicionais. Essa proposta representa uma contribuição original tanto do ponto de vista prático quanto acadêmico, ao oferecer uma abordagem de valuation mais direta e potencialmente mais eficiente na identificação de ativos subavaliados.
+
+Além disso, a comparação entre essa nova métrica e os filtros adaptados por @palazzo2018carteiras permitirá avaliar se metodologias baseadas em fundamentos econômicos clássicos ainda possuem validade preditiva em um mercado emergente como o brasileiro. A presente pesquisa contribui, portanto, não apenas para o debate sobre eficiência de mercado, como também para a compreensão das anomalias de valor documentadas por @fama1992cross, ao considerar um ambiente com características institucionais particulares, como liquidez restrita, alta concentração setorial e assimetria informacional.
+
+Essa discussão conecta-se também com áreas mais recentes da literatura, como as finanças comportamentais, ao reconhecer que decisões de investimento podem ser influenciadas por vieses cognitivos, e com os modelos multifatoriais de precificação de ativos, que ampliam o entendimento sobre o risco e retorno esperado. Nesse sentido, a métrica proposta pode ser vista como uma proxy alternativa para fatores de valor, contribuindo para o refinamento de estratégias que vão além do modelo CAPM tradicional.
 
 ## Ponto de vista prático 
-Do ponto de vista do investidor, a seleção eficiente de ativos continua sendo um dos desafios centrais na busca por retornos superiores ajustados ao risco. A volatilidade do mercado financeiro e a diversidade de ativos disponíveis tornam essencial o desenvolvimento de critérios mais precisos para a alocação de capital.  
+Do ponto de vista do investidor, a seleção eficiente de ativos continua sendo um dos maiores desafios na busca por retornos superiores ajustados ao risco. A diversidade de opções no mercado financeiro, somada à volatilidade acentuada, reforça a importância de estratégias bem fundamentadas para lidar com ciclos econômicos adversos e oscilações abruptas de preços.
 
-Neste sentido, a pesquisa busca oferecer ferramentas baseadas em fundamentos sólidos, permitindo aos investidores otimizar suas decisões e minimizar riscos. A aplicação de novas metodologias pode fornecer uma abordagem mais sistemática na identificação de oportunidades de investimento, reduzindo a dependência de vieses subjetivos e maximizando a eficiência do processo decisório.  
+Simultaneamente, o número de investidores pessoa física na B3 aumentou em mais de 500% nos ultimos 5 anos, saltando de 1 milhão para mais de 6 milhões de contas ativas. Esse crescimento expressivo evidencia uma lacuna urgente no que se refere à educação financeira e à acessibilidade a ferramentas analíticas que auxiliem o investidor iniciante a tomar decisões mais fundamentadas, reduzindo a exposição a erros comportamentais e decisões baseadas apenas em intuições de curto prazo.
 
-Em suma, este estudo visa contribuir tanto para a academia, ao explorar metodologias inovadoras e integrar diferentes áreas do conhecimento, quanto para o mercado financeiro, ao fornecer insights práticos para investidores que buscam aprimorar suas estratégias de seleção de ativos.  
+Neste cenário, este estudo propõe-se a desenvolver uma ferramenta de análise baseadas em fundamentos sólidos, que permitam aos investidores otimizar suas escolhas, minimizar riscos e tomar decisões com maior nível de racionalidade técnica. A aplicação de uma nova métrica inspirada na fórmula original de valor intrínseco de Benjamin Graham representa não apenas uma contribuição metodológica para a literatura acadêmica, mas também uma abordagem prática para a identificação sistemática de oportunidades de investimento, com potencial de reduzir a dependência de vieses subjetivos e maximizar a eficiência do processo decisório.
 
+A justificativa para essa iniciativa ainda está amparada pela baixa penetração de práticas de análise fundamentalista entre investidores brasileiros: segundo dados recentes da B3 (2024), apenas 12% dos investidores pessoas físicas relatam utilizar critérios técnico-contábeis em suas decisões. O GrahamLab busca preencher essa lacuna, ao oferecer uma plataforma intuitiva que conecta teoria e prática, permitindo a visualização dinâmica dos impactos das estratégias testadas.
 
+O impacto educacional e social da proposta também merece destaque. Em um país onde apenas 3% da população economicamente ativa investe diretamente em ações, iniciativas que democratizam o acesso ao conhecimento técnico de qualidade podem desempenhar um papel transformador. 
+
+  Diante do exposto, este projeto apresenta potencial significativo de contribuição científica e tecnológica. Do ponto de vista acadêmico, ele preenche uma lacuna específica na literatura nacional ao propor e testar uma metodologia alternativa de seleção de ativos baseada na fórmula original de valor intrínseco de Benjamin Graham — uma abordagem reconhecida internacionalmente. Do ponto de vista técnico e prático, o desenvolvimento do GrahamLab, uma ferramenta educacional interativa e aplicada, representa uma inovação relevante para o ensino e a difusão da análise fundamentalista no Brasil. Essa plataforma contribuirá para a formação de investidores mais preparados e conscientes, conectando teoria e prática de forma acessível, didática e escalável. Ao integrar esses dois eixos — o rigor analítico da pesquisa científica e a aplicação prática por meio de tecnologia educacional —, o projeto consolida-se como uma proposta de alto valor para a academia, o mercado e a sociedade.
 
 
 # Objetivos {#sec-objetivos}
 
-Terceira seção a ser escrita.
 
 
 ## Objetivo Geral {#sec-objgeral}
 
-O presente estudo tem como objetivo avaliar o excesso de retorno gerado por estratégias de value investing no mercado brasileiro, comparando os resultados obtidos com diferentes métricas de avaliação de ativos. Para isso, será utilizada uma nova unidade de medida baseada na fórmula de Graham. A nova métrica utilizada será definida pela equação $\sqrt{22.5 \times LPA \times VPA}$.Seus resultados serão contrastados com os achados do estudo de Pallazo. A pesquisa busca verificar se essa nova abordagem apresenta maior eficiência na seleção de ativos subvalorizados e na predição de retornos superiores ao mercado.
+  O presente estudo tem como objetivo avaliar o desempenho de estratégias de value investing no mercado brasileiro, comparando carteiras construídas a partir dos filtros adaptados por @palazzo2018carteiras com uma nova abordagem baseada na fórmula de valor intrínseco de Graham. A avaliação será realizada através de métricas de retorno ajustado ao risco (índice deSharpe e alfa de Jensen), utilizando dados de empresas listadas na B3 no período de 2014-2024.
+
+
+
 
 ## Objetivos Específicos {#sec-objespecficos}
 
-Artigo 1: Revisão de Literatura e Análise Bibliométrica sobre Value Investing
+### Artigo 1: Revisão de Literatura e Análise Bibliométrica sobre Value Investing
+
 O primeiro artigo tem como objetivo realizar uma revisão sistemática da literatura e uma análise bibliométrica sobre value investing, investigando sua evolução teórica e empírica ao longo do tempo. A revisão abordará os principais estudos que analisam a eficácia dessa estratégia, suas bases conceituais e metodológicas, e as evidências de excesso de retorno gerado por ativos considerados subvalorizados.
 
-Metodologia
-
-Base de dados Web of Science e ..... Brasil ???????
-
-Chave de pesquisa: TITLE-ABS-KEY "Value Investing"
-
-Análise dos resultados 
 
 Considerações sobre o produto 1
 
-Evidências empíricas de retornos superiores – Diversos estudos demonstram que carteiras baseadas em métricas de valuation, como P/L (Preço/Lucro), P/VPA (Preço/Valor Patrimonial) e dividend yield, tendem a superar os retornos de carteiras de crescimento no longo prazo. Trabalhos como @fama1992cross confirmam a existência do chamado "value premium".
 
-Artigo 2 Revisão - intrinsic value
-
-Artigo 3 investigação do modelo proposto por palazzo usando filtro de graham 
-
-Produto 4 - Carteira de Graham adaptada ao Brasil 
+O objetivo desta revisão de literatura é reunir e analisar as principais evidências teóricas e empíricas que sustentam o desempenho superior de estratégias de value investing, baseadas em métricas de avaliação como Preço/Lucro (P/L), Preço/Valor Patrimonial (P/VPA) e dividend yield. Estudos clássicos, como @fama1992cross, documentam a existência do value premium, sugerindo que ações consideradas subvalorizadas tendem a gerar retornos superiores no longo prazo em comparação às estratégias baseadas no crescimento.
 
 
+### Artigo 2: Investigando o Prêmio por Valor: Uma Revisão dos Resultados de Pallazo com Aplicação de um Novo Filtro Baseado no Valor Intrínseco 
+
+Avaliar empiricamente a eficácia da fórmula de valor intrínseco de Graham como critério de seleção de ações no mercado brasileiro, comparando seu desempenho com os sete filtros adaptados por @palazzo2018carteiras. A análise será realizada através da construção de carteiras teóricas baseadas em dados fundamentalistas de empresas listadas na B3, com avaliação comparativa de métricas de retorno, risco e desempenho ajustado ao risco, no período [2014-2024].
+
+Para isso, os resultados obtidos serão comparados com os achados de Pallazo, que já investigou o desempenho de carteiras baseadas em filtros de valor no mercado brasileiro. A comparação permitirá verificar se a nova métrica apresenta maior eficácia na identificação de ações subvalorizadas e na geração de retornos ajustados ao risco.
+
+
+### Produto 3 - GrahamLab: Laboratório Digital de Estratégias de Valor para Alunos e Investidores
+
+Como desdobramento prático deste estudo, propõe-se o desenvolvimento de um aplicativo voltado para a simulação e acompanhamento de carteiras baseadas em estratégias de value investing. O objetivo é permitir que alunos da instituição e demais interessados acompanhem, em tempo real, o desempenho das carteiras montadas com diferentes filtros de valuation, incluindo a nova métrica inspirada na fórmula de Graham.
+
+Além disso, o aplicativo servirá como plataforma para o desenvolvimento de produtos subjacentes, como ferramentas de otimização de portfólios, análise de risco e retorno, backtests históricos e geração de relatórios automáticos. Essa iniciativa visa promover a educação financeira e a aplicação prática dos conceitos estudados, integrando teoria, tecnologia e aprendizado ativo.
+
+Considera-se que estes três objetivos específicos estão conectados e se complementam para atender ao objetivo geral da pesquisa. O Artigo 1 fornecerá o embasamento teórico e a identificação de lacunas; o Artigo 2 contribuirá com evidências empíricas sobre a eficácia comparativa das métricas de value investing no mercado brasileiro; e o GrahamLab aplicará os conhecimentos gerados em uma ferramenta prática com finalidade educacional, permitindo a disseminação dos resultados da pesquisa para, por exemplo, investidores inidividuais ou iniciantes.
 
 # Revisão de Literatura {#sec-revisao}
 
-Primeira seção a ser escrita.
+
 
 Investimento em valor (Value Investing) é uma estratégia de investimento baseada na análise fundamentalista de empresas, buscando ativos que são negociados abaixo de seu valor intrínseco. @graham1934security foram os primeiros a propor essa metodologia, na qual investidores "de valor" procuram identificar ações ou outros ativos subvalorizados pelo mercado, com potencial de valorização no longo prazo. Essa estratégia envolve a avaliação de indicadores financeiros, como o índice preço sobre valor patrimonial (price-to-book ratio), o índice preço sobre lucro (price-to-earnings ratio) e outros critérios fundamentais.
 
@@ -113,21 +147,329 @@ O investimento em valor parte do pressuposto de que o mercado nem sempre é efic
 
 Graham é comumente conhecido como o pai da estratégia no contexto do value investing e, em seu primeiro livro, Security Analysis, @graham1934security cunharam o termo "Margem de Segurança" (Margin of Safety). Segundo Graham, quanto menor o preço de compra de uma empresa em relação ao seu valor intrínseco, maior será a Margem de Segurança.
 
-Em seu segundo livro, The Intelligent Investor, publicado pela primeira vez em 1949, Graham e Zweig (2003) apresentam um guia conciso para ajudar investidores em suas estratégias de investimento, aconselhando a evitar erros substanciais e buscando retornos satisfatórios no longo prazo. Além disso, @graham2003intelligent sugerem a aplicação de certos filtros ao analisar balanços patrimoniais para identificar empresas com as seguintes características: balanços sólidos, lucratividade e subavaliação. Muitos estudos mostram que investir em ativos com baixos índices preço sobre valor patrimonial (P/B) e preço sobre lucro (P/E), alta liquidez corrente e pagamentos consistentes de dividendos frequentemente chamadas de "ações de valor" (value stocks) oferece retornos superiores àqueles com índices mais altos.
+Em seu segundo livro, The Intelligent Investor, publicado pela primeira vez em 1949, @graham2003intelligent apresentam um guia conciso para ajudar investidores em suas estratégias de investimento, aconselhando a evitar erros substanciais e buscando retornos satisfatórios no longo prazo. Além disso, @graham2003intelligent sugerem a aplicação de certos filtros ao analisar balanços patrimoniais para identificar empresas com as seguintes características: balanços sólidos, lucratividade e subavaliação. Muitos estudos mostram que investir em ativos com baixos índices preço sobre valor patrimonial (P/B) e preço sobre lucro (P/E), alta liquidez corrente e pagamentos consistentes de dividendos frequentemente chamadas de "ações de valor" (value stocks) oferece retornos superiores àqueles com índices mais altos.
+
+## Principais estudos no Brasil
+
+A fim de identificar a produção científica nacional sobre estratégias de investimento em valor, foi realizada uma busca bibliográfica na plataforma Google Scholar por meio do software Publish or Perish, devido à limitação de cobertura em outras bases como Scopus e Web of Science quanto à literatura brasileira sobre o tema. Para a realização da busca bibliográfica, utilizou-se o termo "Value Investing", aplicado por meio da string de pesquisa “value investing” AND (“Brasil” OR “Brazil” OR “Brazilian market”). A pesquisa retornou um total de 51 artigos, dos quais apenas 13 estudos foram selecionados por abordarem diretamente o tema value investing no contexto brasileiro, com aplicação de filtros fundamentalistas inspirados na abordagem de Benjamin Graham. Esses 13 trabalhos foram submetidos a uma análise qualitativa mais aprofundada, enquanto os demais compuseram a base para análises bibliométricas complementares, como frequência por ano, número de citações e periódicos de publicação.
+
+## Produção científica por ano
+
+> A distribuição dos 51 artigos analisados ao longo do tempo revela um padrão de crescimento gradual na literatura nacional sobre *value investing*. O primeiro trabalho da amostra data de **2008**, sinalizando os primeiros esforços de adaptação da abordagem de Graham ao contexto brasileiro. A partir de **2010**, observa-se uma aceleração tímida, com **uma a duas publicações por ano** até **2012**.  
+>
+> O marco mais evidente ocorre em **2013**, quando o número de publicações salta para **5 artigos**, incluindo contribuições relevantes como as de Galdi & Lopes (2013) e Holloway et al. (2013), que trouxeram evidências empíricas sobre limites à arbitragem e fatores que influenciam o investimento em valor no Brasil.  
+>
+> Entre **2014 e 2016**, a produção se mantém estável, com **3 a 4 publicações por ano**, refletindo um período de consolidação da discussão sobre filtros fundamentais, ciclos de mercado e estratégias como o F-score e a Fórmula Mágica.  
+>
+> O ano de **2018** representa um novo pico com **6 artigos publicados**, possivelmente impulsionado pela retomada do interesse acadêmico após crises econômicas e mudanças no perfil dos investidores institucionais. Em **2019** e **2020**, a produção se estabiliza, mas com **contribuições mais aplicadas**, especialmente em revistas como a *RCF* e a *RAM*.  
+>
+> A partir de **2021 até 2023**, há **uma ligeira queda** no volume de publicações, mas a presença contínua de artigos demonstra que o tema ainda é objeto de interesse, especialmente para pesquisas aplicadas em Finanças Corporativas e comportamento de carteiras.
+
+## Top 15 Artigos Mais Citados
+
+JK Nahzat Abbas et al. (2015) - A study to check the applicability of Fama and French… - 34 citações
+
+Galdi & Lopes (2013) - Limits to arbitrage and value investing: Evidence from Brazil - 33 citações
+
+Cupertino & Martinez (2012) - Accrual anomaly in the Brazilian capital market - 32 citações
+
+Holloway et al. (2012) - Factors influencing Brazilian value investing portfolios - 28 citações
+
+Tripathy & Pani (2017) - Effect of F score on stock performance… (Índia) - 23 citações
+
+Lafont, Ruiz, H. (2020) - Value creation in listed companies: A bibliometric approach - 22 citações
+
+V Lawlani & Du Channel (2020) - Multi-factor asset pricing models… - 22 citações
+
+Villaschi & Galdi (2011) - Análise fundamentalista para seleção de uma carteira… - 19 citações
+
+Galdi & Lima (2016) - Value & Growth Investing e PEAD no Brasil - 17 citações
+
+L.R. Santos & MFS (2018) - Value and growth stocks in Brazil: risks and returns… - 16 citações
+
+Palazzo et al. (2013) - Análise de carteiras de valor no mercado brasileiro - 14 citações
+
+Serra et al. (2014) - Determinantes da performance de ações brasileiras… - 12 citações
+
+Palazzo (2018) - Analysis of value portfolios in the Brazilian market - 10 citações
+
+DA Ensslin et al. (2012) - Indicadores da análise fundamentalista e retorno das ações… - 8 citações
+
+Zeidler (2013) - Sustainability indices in Latin America… - 8 citações
+
+Entre os 15 artigos mais citados 5 estão diretamente ligados ao tema de estudo
+
+## Classificação temática dos estudos analisados
+
+A análise dos 51 artigos permitiu a identificação de **dez eixos temáticos principais**, refletindo a diversidade metodológica e teórica presente na literatura nacional sobre *value investing*. Abaixo, estão descritas as principais categorias identificadas:
+
+### Filtros de Graham
+Estudos que aplicam diretamente os múltiplos fundamentais propostos por Benjamin Graham, como P/L, P/VPA, dividend yield, margem de segurança e liquidez corrente. Enquadram-se aqui pesquisas empíricas sobre construção de carteiras baseadas nesses critérios.
+- Exemplos: Palazzo et al. (2013), Zeidler (2014), Batista (2022)
+
+### Fórmula Mágica de Greenblatt
+Artigos que utilizam a métrica desenvolvida por Joel Greenblatt, que combina retorno sobre capital investido (ROIC) e múltiplos de lucro (EV/EBIT) para classificar e selecionar ativos.
+- Exemplos: Rodrigues et al. (2021), Barros et al. (2024)
+
+### Piotroski F-Score
+Pesquisas que avaliam estratégias de investimento baseadas no F-Score de Piotroski, um índice contábil composto por nove critérios para identificar empresas financeiramente sólidas.
+- Exemplos: Tripathy & Pani (2017), Silva & Lima (2017)
+
+### Anomalias Contábeis
+Trabalhos voltados à investigação de anomalias como o *accrual anomaly*, qualidade dos lucros e distorções na contabilidade, frequentemente integradas à análise de valor.
+- Exemplos: Cupertino & Martinez (2012), Galdi & Lopes (2013)
+
+### Estratégias Value vs. Growth
+Estudos que comparam a performance de carteiras compostas por ações de valor e de crescimento, testando hipóteses associadas ao desempenho relativo entre estilos.
+- Exemplos: Galdi & Lima (2016), Santos & Lima (2018)
+
+### Efeitos de Calendário / PEAD
+Artigos que analisam efeitos temporais sobre os retornos, como o *post-earnings announcement drift* (PEAD), efeito janeiro ou sazonalidade nas estratégias de valor.
+- Exemplos: Galdi & Lima (2016), Serra et al. (2014)
+
+### Finanças Comportamentais
+Estudos que exploram vieses psicológicos e decisões não racionais de investidores que afetam estratégias de investimento em valor.
+- Exemplos: Silva & Lima (2017), Sales & Galdi (2015)
+
+### Modelos Multifatoriais (Fama-French, Carhart)
+Pesquisas que testam o retorno das estratégias de value investing utilizando modelos de precificação multifatorial, como Fama-French 3 e 5 fatores, e Carhart 4 fatores.
+- Exemplos: Abbas et al. (2015), Lawlani & Channel (2020)
+
+### Bibliometria e Revisões Sistemáticas
+Trabalhos metodológicos que visam mapear a produção científica sobre o tema no Brasil e no mundo, utilizando análises bibliométricas e revisões sistematizadas da literatura.
+- Exemplos: Lafont et al. (2020), Barros & Albuquerque (2023)
+
+### Sustentabilidade e ESG
+Estudos que associam o value investing à performance de empresas com práticas sustentáveis ou índices ESG, explorando a convergência entre valor fundamental e responsabilidade corporativa.
+- Exemplos: Zeidler (2013), Ensslin et al. (2012)
 
 
-Devo resumir os meus resultados da minha revisão de literatura nesta seção???
+## Value Investing no Brasil
+
+O interesse pelo value investing no Brasil, embora presente anteriormente, ganhou maior espaço na produção acadêmica a partir da década de 2010, impulsionado tanto pelo legado teórico de Benjamin Graham quanto pela busca prática por estratégias fundamentadas em critérios objetivos de seleção de ativos. Nesse contexto, diversos estudos nacionais buscaram testar a eficiência dessa abordagem no mercado acionário brasileiro, explorando desde a aplicação de filtros fundamentalistas até metodologias mais recentes, como o uso da Magic Formula de Joel Greenblatt.
+
+O estudo de @almeida2011graham marca o início dessa fase ao testar filtros fundamentalistas via quartis, utilizando múltiplos como P/L, P/VPA e ROE. Os autores demonstraram que metade das carteiras formadas a partir desses filtros apresentou alfa positivo, superando o Ibovespa, o que reforçou a viabilidade da estratégia mesmo em um ambiente emergente. Na mesma linha, @holloway2012graham introduziu uma perspectiva diferenciada ao analisar os fatores que influenciam a permanência de ações em fundos value. A pesquisa destacou a estabilidade dos lucros, a rentabilidade sobre ativos (ROA) e a margem bruta como determinantes para a manutenção dos papéis nas carteiras, contribuindo para o debate sobre a importância de fundamentos consistentes na construção de portfólios.
+
+Em 2013, @palazzo2014filtros aprofundaram a análise sobre a aplicabilidade dos filtros de Graham no contexto brasileiro, avaliando a relevância de cada filtro tanto individualmente quanto em combinação. No mesmo ano, @holloway2013value reforçaram a centralidade dos fundamentos contábeis nas decisões de compra e manutenção de ações por gestores de fundos, validando empiricamente que estabilidade de lucros, ROA e margem bruta são fatores decisivos nesse processo.
+
+O avanço das ferramentas analíticas e das bases de dados favoreceu, a partir de 2014, a incorporação de metodologias mais sofisticadas. @zeidler2014magic introduziu no Brasil a aplicação da Magic Formula de Joel Greenblatt, estratégia que combina retorno sobre capital investido e lucro relativo ao preço das ações. O estudo demonstrou que todas as carteiras testadas superaram o desempenho do Ibovespa, com destaque para o melhor CAGR atingindo 40% e betas inferiores a um, evidenciando menor risco sistemático. Posteriormente, @milane2016value reforçou a aplicabilidade da Magic Formula ao testar diferentes números de ativos e períodos de permanência, confirmando sua eficácia em cenários de alta volatilidade.
+
+Em continuidade a essa linha de desenvolvimento, @palazzo2018carteiras buscaram adaptar os filtros de Graham ao mercado brasileiro, avaliando a eficácia dos filtros isolados e combinados no período de 2003 a 2012. Os autores identificaram que, embora os filtros utilizados em conjunto apresentassem desempenho superior ao benchmark, critérios como P/L, P/VPA e histórico de dividendos tinham menor relevância quando analisados isoladamente. Filtros relacionados à estabilidade de lucros e liquidez demonstraram maior capacidade explicativa para os retornos, estimulando a reflexão sobre a necessidade de modelos mais robustos de estimação do valor intrínseco, ajustados às especificidades setoriais e aos fundamentos de longo prazo.
+
+O estudo de @almeida2019value complementou essa discussão ao avaliar o impacto de diversos indicadores fundamentalistas nos retornos das ações do IBrX-100. Os autores confirmaram a relevância de múltiplos como P/L, P/VPA, ROA e VarLL, demonstrando que tais métricas podem atuar como proxies efetivas para a seleção de ativos baseados em fundamentos.
+
+No início da década de 2020, a literatura nacional passou a incorporar testes mais robustos, incluindo rebalanceamentos periódicos, hierarquização de filtros e a utilização de múltiplos índices de mercado. @rodrigues2021estrategia contribuíram ao propor a hierarquização dos filtros de Graham, priorizando aqueles com maior poder preditivo. Além disso, incorporaram métricas de risco ajustado, como os índices de Sharpe, Treynor e o alfa de Jensen, e ampliaram os benchmarks utilizados, incluindo CDI e IBrX, o que fortaleceu a comparabilidade e a robustez das análises.
+
+No mesmo período, @conceicao2021graham avaliou a eficácia da Magic Formula em diferentes configurações de tamanho de carteira e horizonte de permanência. Os resultados indicaram que a estratégia superou o desempenho do Ibovespa em todas as configurações testadas, consolidando sua relevância no cenário nacional.
+
+A sofisticação metodológica avançou ainda mais com @batista2022estrategia, que analisou a interação entre filtros de Graham, a Magic Formula e o ciclo de vida das empresas. O estudo sugeriu que o estágio de maturidade das companhias pode influenciar significativamente a efetividade dos filtros fundamentalistas. @rossijunior2022filtros introduziu o conceito de rebalanceamento periódico semestral na aplicação dos filtros de Graham, demonstrando que a atualização sistemática das carteiras resultou em ganhos superiores ao modelo Buy and Hold e ao Ibovespa, ressaltando a importância de uma abordagem dinâmica e contínua na busca pela aproximação entre preço de mercado e valor intrínseco.
+
+No mesmo ano, @domingues2022value, realizaram uma análise comparativa entre as estratégias de Piotroski, Graham e Greenblatt, empregando modelos multifatoriais de precificação. O estudo destacou a superioridade da estratégia de Graham, que apresentou o melhor desempenho anualizado (36,14%), superando Piotroski (30,06%) e Greenblatt (21,92%), além de superar o próprio Ibovespa (9,26%).
+
+Em uma abordagem mais recente, @barros2024value propuseram uma metodologia baseada em rankings setoriais trimestrais, com o objetivo de adaptar a estratégia de value investing à heterogeneidade dos setores da economia brasileira. O estudo testou carteiras de 10 e 20 ativos no período de 1998 a 2020 e demonstrou que tais carteiras superaram sistematicamente os benchmarks utilizados (Ibovespa e IBrX100). Essa metodologia representa um avanço relevante ao considerar a performance relativa dentro dos setores, aproximando-se de uma forma implícita e dinâmica de estimação do valor intrínseco.
+
+Paralelamente a essas contribuições, a literatura nacional consolidou a aplicação da Magic Formula como um caminho complementar à abordagem tradicional de Graham. Além dos estudos de @zeidler2014magic,@milane2016value e @conceicao2021graham reforçou a robustez da estratégia, validando sua eficácia em diferentes cenários operacionais. A Magic Formula, por sua construção, pode ser interpretada como uma aproximação simplificada da estimação do valor intrínseco, ao combinar rentabilidade operacional com um preço de entrada atrativo.
+
+Esse panorama evidencia uma trajetória de amadurecimento metodológico na literatura brasileira sobre value investing, que evoluiu de aplicações diretas e pouco ajustadas para modelos mais sofisticados, incluindo rebalanceamentos periódicos, hierarquização de filtros, rankings setoriais e integração de métricas de risco ajustado. No entanto, persiste uma lacuna comum entre os estudos analisados: a ausência da estimação formal e direta do valor intrínseco, seja por meio de fluxo de caixa descontado, múltiplos ajustados por setor ou modelos de lucro residual. Também não foram identificadas aplicações de testes econométricos de convergência entre preço de mercado e valor justo, o que representa uma oportunidade relevante para o avanço das pesquisas, especialmente no sentido de aprofundar a compreensão sobre a dinâmica de aproximação entre preço e fundamentos no mercado brasileiro.
+
+A análise dos 13 artigos selecionados revela uma forte dependência de metodologias baseadas em filtros fundamentalistas clássicos, como P/L, P/VP, dividend yield e ROE, inspirados na filosofia de Benjamin Graham. Embora esses estudos tenham contribuído para validar empiricamente o desempenho de estratégias de value investing no contexto brasileiro, a maioria adota abordagens simplificadas e mecânicas, limitando-se à seleção de ações com base em rankings ou regras fixas de múltiplos contábeis. Predomina o uso de métodos quantitativos descritivos, com testes de retorno médio das carteiras e, em alguns casos, comparações com o Ibovespa, mas sem ajustes adequados de risco ou aplicação de modelos de precificação como CAPM ou Fama-French de forma consistente. Além disso, nenhum dos estudos investigou diretamente a estimação do valor intrínseco dos ativos, nem sua eventual convergência com o preço de mercado ao longo do tempo — uma lacuna metodológica significativa. 
+
+## Estudos Brasileiros Selecionados
+
+### Almeida et al. (2011)
+**Período analisado:** 1997 - 2011
+**Objetivo:** Testar filtros fundamentalistas via quartis no Brasil.  
+**Resultados:** Metade das carteiras apresentou alfa positivo, superando o Ibovespa.
+
+### Holloway (2012)
+**Período analisado:** 2008 - 2011
+**Objetivo:** Identificar fatores que influenciam a manutenção em fundos value.  
+**Resultados:** ROA, estabilidade de lucros e margem bruta explicam a permanência das ações nas carteiras.
+
+### Palazzo et al. (2013)
+**Período analisado:** 2003 - 2012  
+**Objetivo:** Verificar a relevância dos filtros de Graham no Brasil.  
+**Resultados:**  possuir grande porte; possuir liquidez corrente maior do que um; apresentar crescimento decenal dos lucros mínimo de 30%; apresentar baixo índice preço/lucro; e apresentar um histórico de lucros consistentes foram os filtros mais relevantes.
+
+
+### Zeidler (2014)
+**Período analisado:** 2002 - 2014  
+**Objetivo:** Realizar um backtest da Magic Formula no Brasil. 
+
+**Resultados:** Todas as carteiras superaram o Ibovespa; CAGR de até 40%.
+
+### Galdi e Lima (2016)
+**Período analisado:** – 2001 - 2011 
+**Objetivo:** Investigar PEAD aliado a filtros value e growth.  
+**Resultados:** Os resultados demonstraram que a análise da surpresa de lucros quando conjugada com a análise de critérios fundamentalistas, é útil para aprimorar os modelos de seleção de ações
+
+### Palazzo et al. (2018)
+**Período analisado:** 2005–2015  
+**Objetivo:** Validar e adaptar os filtros de Graham ao contexto brasileiro.  
+**Resultados:** Lucros consistentes e liquidez corrente se destacaram.
+
+### Almeida e Sales (2019)
+**Período analisado:** 2009 - 2018  
+**Objetivo:** Avaliar impacto de indicadores fundamentalistas no IBrX-100.  
+**Resultados:** Das nove variáveis explicativas identificadas como melhor preditoras do retorno acionário, cinco delas estavam presentes nos filtros de seleção de ações de Graham: VarLL 
+(Variação da Média Trienal do Lucro Líquido), P/L (Preço Lucro Médio), AT (Ativo Total), LC (Liquidez Corrente) e P/VPA (Preço Valor Patrimonial por Ação). 
+
+### Rodrigues et al. (2021)
+**Período analisado:** 2010–2019  
+**Objetivo:** Verificar eficácia dos filtros de Graham e adaptados por @palazzo@2018carteiras com hierarquização.  
+**Resultados:** Hierarquização melhorou a seleção; P/L e dividendos com baixa relevância isolada.
+
+### Conceição (2021)
+**Período analisado:** 2006 - 2020  
+**Objetivo:** Testar Magic Formula com diferentes tamanhos de carteira.  
+**Resultados:** Todas as carteiras apresentaram retornos superiores ao Ibovespa. As diferenças entre os retornos médios anualizados das carteiras e o do Ibovespa foram significativas
+
+### Batista (2022)
+**Período analisado:** 2010-2021 
+**Objetivo:** Comparar filtros de Graham, Magic Formula e ciclo de vida.  
+**Resultados:** Magic Formula teve retornos anormais; ciclo de vida foi relevante.
+
+### Rossi Junior (2022)
+**Período analisado:** – 2015-2020
+**Objetivo:** Avaliar efeito do rebalanceamento e setor nos filtros de Graham.  
+**Resultados:** Rebalanceamento e setorização aumentaram o desempenho ajustado ao risco comparados aos resultados de @palazzo2018carteiras.
+
+### Domingues et al. (2022)
+**Período analisado:** 2006-2019  
+**Objetivo:** Comparar estratégias de Piotroski, Graham e Greenblatt.  
+**Resultados:**  Os resultados da regressão indicam que as 
+três estratégias geraram alfa de Jensen positivo e estatisticamente significativo. A estratégia de Graham teve o melhor desempenho (36,14% a.a. vs. Ibovespa 9,26%).
+
+### Barros et al. (2024)
+**Período analisado:** 1998–2020  
+**Objetivo:** Adaptar value investing com rankings setoriais trimestrais.  
+**Resultados:** Carteiras de 10 e 20 ações superaram Ibovespa e IBrX100 sistematicamente.
+
+
+
+## Estudos Internacionais Relevantes
+
+Uma busca sistemática foi realizada na base de dados Web of Science, com o objetivo de identificar os principais estudos relacionados à temática do Value Investing. A pesquisa abrangeu o período de 1945 a 2024 e utilizou como string de busca a expressão TITLE-ABS-KEY("Value Investing"), aplicada aos campos de título, resumo e palavras-chave dos documentos indexados. O levantamento inicial resultou em 142 publicações. Para compor o corpus analítico, foram incluídos apenas os estudos que disponibilizavam texto completo, gratuito e em inglês, priorizando-se os 50 artigos mais citados, por sua relevância acadêmica e impacto na consolidação do tema.
+
+A literatura internacional sobre value investing tem demonstrado, de forma robusta e ao longo de diferentes décadas, a eficácia da estratégia em identificar ativos subvalorizados que tendem a gerar retornos superiores. Um dos estudos mais influentes, @piotroski2000value, introduziu o F-Score, uma métrica quantitativa baseada em demonstrações financeiras históricas que permite distinguir empresas financeiramente sólidas das mais frágeis, dentro do universo de ações consideradas “de valor”. Em consonância, @chan2004value reforçam que as estratégias de valor superam sistematicamente as de crescimento, atribuídas tanto a prêmios de risco quanto a viéses comportamentais dos investidores.
+
+A abordagem do value investing também foi estendida a outros mercados, como o de crédito @correia2012value, revelando bom desempenho em ambientes financeiros estressados. Além disso, aspectos comportamentais e psicológicos passaram a ser incorporados, como mostrado por @cronqvist2015value, que identificaram traços de personalidade como determinantes da preferência por estratégias de valor ou crescimento. Complementando essa visão, @otuteye2015heuristic propõem heurísticas para mitigar os viéses cognitivos que comprometem decisões fundamentadas.
+
+Estudos mais recentes, como @asness2015fact e @arnott2020reports, reforçam que o value investing continua eficaz, apesar de ciclos de subdesempenho, desde que adaptado a novos contextos de mercado. A viabilidade da estratégia em ambientes modernos é confirmada também por @israel2021systematic, que destacam a importância da atualização constante dos modelos de seleção de ativos. No mesmo sentido, @lev2022failure argumentam que a recente perda de desempenho está ligada à ascensão de ativos intangíveis e às mudanças na dinâmica de precificação, exigindo uma evolução nos critérios tradicionais de valor.
+
+Diversos estudos exploram metodologias quantitativas complementares, como Data Envelopment Analysis @patari2012dea e modelos multicritério @patari2018mcdm, que demonstram capacidade de aprimorar a seleção de ações. Estratégias que combinam análise técnica e fundamentalista também mostram bons resultados, como evidenciado por @ko2014value no mercado de Taiwan. Já @papathanasiou2022value introduzem o conceito de volatility spillover e mostram como estratégias de valor podem ser integradas a portfólios com proteção contra riscos sistêmicos.
+
+Autores como @bhargava2014fundamentals e @dechow2021duration reforçam a importância de considerar variáveis macroeconômicas e estruturais na avaliação de ações, enquanto @battisti2019strategic sintetizam, em uma revisão sistemática, os fatores críticos para o sucesso do value investing: capital paciente, análise fundamental rigorosa e adaptação às condições locais.
+
+Em síntese, a literatura internacional aponta que o value investing é uma estratégia resiliente e eficaz, mas que requer constante atualização metodológica, integração com novas ferramentas analíticas e reconhecimento de fatores comportamentais e macroeconômicos para manter sua relevância nos mercados modernos.
+
+## Adaptação dos filtros de Graham em Mercados Emergentes
+
+Esta pesquisa propõe a utilização de uma métrica alternativa baseada na fórmula clássica de valor intrínseco de Benjamin Graham, representada por $\sqrt{22{,}5 \times LPA \times VPA}$, com o intuito de oferecer uma medida unificada e teoricamente fundamentada para avaliação de ações no mercado brasileiro. Ao contrário da abordagem predominante na literatura nacional, que aplica múltiplos fundamentalistas de forma isolada, esta métrica busca integrar os principais pilares da análise de valor — lucratividade e patrimônio — em um único indicador sintético. O estudo tem como objetivo avaliar se tal métrica apresenta maior capacidade explicativa sobre os retornos futuros das ações, em comparação com os filtros tradicionalmente utilizados. Espera-se, com isso, contribuir tanto do ponto de vista prático, ao oferecer um critério de seleção replicável e objetivo, quanto teórico, ao retomar o conceito de valor intrínseco como núcleo da estratégia de value investing, reforçando sua aplicabilidade mesmo em contextos de menor eficiência informacional.
+
+## A Fórmula de Valor Intrínseco: Concepção e Aplicações
+
+A fórmula de valor intrínseco proposta por Benjamin Graham representa uma síntese elegante dos princípios fundamentais do value investing, combinando indicadores de rentabilidade e patrimônio com um multiplicador padronizado. Expressa pela equação $\sqrt{22{,}5 \times LPA \times VPA}$, essa métrica busca estimar o valor justo de uma ação por meio da interação entre o Lucro por Ação (LPA) e o Valor Patrimonial por Ação (VPA), ponderados por um coeficiente fixo. O fator 22,5 deriva do produto entre um limite prudencial de 15 para o índice Preço/Lucro (P/L) e 1,5 para o índice Preço/Valor Patrimonial (P/VP), valores que Graham considerava aceitáveis para empresas de qualidade com margem de segurança adequada.
+
+Diferentemente dos múltiplos fundamentalistas utilizados isoladamente, a fórmula de Graham incorpora uma visão mais integrada do valor econômico da empresa, funcionando como um indicador sintético de subavaliação. Sua simplicidade operacional e fundamentação conceitual permitem não apenas sua utilização em processos de triagem de ações, mas também a construção de métricas comparativas entre preço de mercado e valor teórico — oferecendo, assim, um parâmetro para investigar a eventual convergência de preços ao valor intrínseco ao longo do tempo.
+
+Apesar de sua notoriedade no campo teórico, a aplicação sistemática dessa fórmula no contexto empírico brasileiro ainda é limitada. A maioria dos estudos nacionais recorre a filtros clássicos de Graham de forma fragmentada, com ênfase em múltiplos contábeis isolados e critérios mecânicos de seleção. Nesse sentido, a adoção da fórmula como métrica principal de avaliação representa não apenas uma inovação metodológica, mas também uma oportunidade de resgatar o conceito original de valor intrínseco em sua forma mais estruturada e replicável, adaptando-o às especificidades dos mercados emergentes.
+
+## Aprofundamento da Análise do Artigo @palazzo2018carteiras
+
+O estudo de @@palazzo2018carteiras baseia-se em uma análise empírica robusta com dados do sistema Economatica®, avaliando a aplicabilidade dos filtros de Benjamin Graham ao mercado acionário brasileiro. Inicialmente, o comportamento histórico dos múltiplos das empresas foi analisado no período de janeiro de 1995 a dezembro de 2004, considerando-se válidas para a amostra todas as ações que apresentaram ao menos uma negociação em 2004, totalizando 313 companhias e 532 ações. As carteiras foram compostas na data-base de 29 de abril de 2005 — após a divulgação dos balanços anuais — e mantidas de forma passiva até 30 de abril de 2015, totalizando dez anos de verificação. Em linha com a filosofia do value investing, as carteiras não foram rebalanceadas, e os proventos foram reinvestidos nas mesmas ações. A seleção seguiu critérios de liquidez, escolhendo-se apenas a ação mais líquida por companhia para evitar concentração e garantir maior replicabilidade prática.
+
+Para adaptar os filtros de Graham à realidade brasileira, os autores ajustaram os patamares de corte conforme a necessidade do contexto local, evitando a simples transposição dos parâmetros definidos nos Estados Unidos na década de 1970. Os sete filtros utilizados foram:
+(1) Receita operacional bruta anual superior a R$ 300 milhões, com base na definição legal de grandes empresas;
+(2) Liquidez corrente mínima de 1,22, equivalente à mediana das empresas brasileiras em 2004;
+(3) Lucros ininterruptos nos últimos cinco anos, buscando resiliência frente aos ciclos econômicos;
+(4) Pagamento contínuo de dividendos nos últimos cinco anos, como evidência de geração e distribuição estável de lucros;
+(5) Crescimento médio anual dos lucros por ação de pelo menos 2,66% ao ano ao longo de uma década, conforme proposto por Graham;
+(6) Preço/Lucro (P/L) inferior a 7, como aproximação da atratividade relativa frente à taxa Selic de 2004 (17,75%);
+(7) Preço/Valor Patrimonial (P/VP) inferior a 1,00, ou, alternativamente, com o produto entre P/L e P/VP inferior a 7, respeitando o princípio de compensação entre os múltiplos;
+
+
+A construção das carteiras seguiu uma lógica ingênua, selecionando as 10 ações mais líquidas que satisfaziam cada filtro individualmente, além de carteiras compostas com todos os filtros simultaneamente. Também foram realizadas simulações retirando-se filtros um a um para identificar sua relevância marginal. O desempenho das carteiras foi avaliado por métricas como retorno médio anual, volatilidade (desvio padrão), índice de Sharpe, beta e alpha de Jensen, sempre sem considerar impostos ou custos de transação, buscando comparabilidade com produtos financeiros reais, como fundos de investimento.
+
+Os resultados do estudo indicam que a aplicação dos filtros fundamentados no modelo de Graham foi, em grande parte, eficaz para gerar carteiras com desempenho superior ao Ibovespa no período de maio de 2005 a abril de 2015. Quando aplicados isoladamente, os filtros 3 (lucros ininterruptos por cinco anos), 5 (crescimento médio de lucros de 2,66% ao ano por 10 anos) e 7 (produto P/L x P/VP menor ou igual a 7) destacaram-se por proporcionar os maiores retornos e melhores índices de Sharpe, superando não apenas o benchmark de mercado, mas também a taxa Selic. O filtro 7, em particular, apresentou o maior índice de Sharpe (0,0637), o menor beta (0,6846) e o maior alpha (0,72), evidenciando-se como o critério mais eficiente quando aplicado de forma isolada.
+
+Entretanto, ao aplicar todos os sete filtros simultaneamente, observou-se uma carteira com retorno anualizado de 11,10% e volatilidade de 16,52%, superior ao Ibovespa em termos de risco-retorno ajustado. Para avaliar a contribuição individual de cada filtro dentro da seleção conjunta, os autores retiraram cada critério separadamente. Essa análise revelou que os filtros 2 (liquidez corrente) e 3 (lucros ininterruptos) foram os únicos cuja retirada causou queda significativa na performance da carteira, confirmando sua relevância. Já os filtros 1 (porte mínimo de R$ 300 milhões) e 6 (P/L ≤ 7) mostraram-se irrelevantes, pois sua exclusão não alterou a composição nem o desempenho da carteira, sugerindo que essas condições eram amplamente atendidas pelas empresas selecionadas pelos demais critérios. Curiosamente, os filtros 4 (pagamento contínuo de dividendos), 5 (crescimento decenal dos lucros) e 7 (P/L x P/VPA ≤ 7), que tiveram bom desempenho isoladamente, apresentaram efeito negativo quando utilizados em conjunto, gerando carteiras com desempenho superior quando foram retirados.
+
+Dessa forma, o estudo evidencia que os critérios mais relevantes para o mercado brasileiro no período analisado foram aqueles relacionados à liquidez de curto prazo e à consistência nos lucros. A aplicação da metodologia de Graham, adaptada ao contexto nacional, resultou em carteiras com retornos ajustados ao risco superiores ao mercado, beta inferior a 1,00 e alpha positivo, reforçando a validade do value investing como estratégia eficaz no Brasil. Ainda assim, o trabalho mostra que certas adaptações são necessárias: filtros como dividendos constantes, crescimento histórico elevado e múltiplos excessivamente rígidos devem ser reconsiderados ou flexibilizados em função das características específicas do mercado brasileiro.
+
+Apesar da inegável contribuição do estudo de @palazzo2018carteiras para a consolidação do value investing no contexto brasileiro, algumas limitações metodológicas e conceituais ainda se fazem presentes e abrem espaço para avanços relevantes. O trabalho realiza uma adaptação criteriosa dos filtros propostos por Benjamin Graham à realidade nacional, mas permanece ancorado em critérios fixos e estáticos de corte. 
+
+Adicionalmente, o estudo fundamenta-se predominantemente na aplicação de filtros individuais e na análise de suas interações marginais, mas não contempla formalmente o conceito de valor intrínseco, eixo central da filosofia de Graham. Em particular, a equação  proposta por Graham, $$V = \sqrt{22{,}5 \times LPA \times VPA}$$, não é operacionalizada no modelo empírico adotado, impossibilitando uma avaliação da hipótese de convergência entre preço de mercado e valor fundamental — elemento central para aferição da eficiência de uma estratégia de investimento em valor ao longo do tempo. Essa lacuna metodológica limita o escopo teórico do estudo e restringe sua contribuição à performance relativa de múltiplos contábeis, sem uma medida direta da margem de segurança.
+
+Neste sentido, o presente trabalho avança sobre essas limitações ao propor uma nova métrica fundamentada diretamente na fórmula de valor intrínseco de Graham, o que permite a mensuração objetiva do nível de desconto de cada ativo em relação ao seu valor estimado. Tal abordagem viabiliza uma investigação mais robusta da relação entre descontos fundamentais e retornos subsequentes, permitindo, inclusive, testar se ativos substancialmente subavaliados apresentam convergência de preço ao valor teórico ao longo do tempo. 
+
+
+## Lacunas Identificadas na Literatura
+
+A literatura contemporânea sobre estratégias fundamentadas em value investing evidencia avanços relevantes, mas ainda apresenta lacunas significativas, sobretudo no que se refere à sua operacionalização empírica em mercados emergentes. Um primeiro ponto a destacar é a ausência de uma métrica consensual de valor intrínseco. A maior parte dos estudos recorre ao uso de múltiplos fundamentalistas isolados — como P/L, P/VP ou dividend yield — os quais, embora úteis, carecem de integração conceitual, o que compromete a robustez analítica das decisões de seleção de ativos @battisti2019strategic;@almeida2019value.
+
+Além disso, verifica-se uma subexploração da fórmula de valor intrínseco proposta por Graham, expressa por $\sqrt{22{,}5 \times LPA \times VPA}$, enquanto unidade sintética de avaliação. Apesar de sua relevância teórica, sua aplicação empírica no contexto brasileiro ainda é incipiente, sendo raramente adotada como métrica central em estudos de desempenho ou formação de carteiras. Trabalhos como os de @zeidler2014magic e @ko2014value sugerem que a fórmula apresenta potencial preditivo relevante, especialmente quando adaptada às especificidades de mercados com menor eficiência informacional.
+
+Outra lacuna importante refere-se à escassez de investigações que relacionem diretamente o valor intrínseco estimado com o retorno ajustado ao risco, ou que verifiquem a existência de convergência entre preço de mercado e valor fundamental ao longo do tempo — uma hipótese coerente com a lógica do value investing e com os princípios da reversão à média dos preços dos ativos @piotroski2000value.
+
+Por fim, nota-se a baixa integração entre métricas de valor e técnicas quantitativas contemporâneas, como modelos de análise multicritério @patari2018mcdm ou regressões dinâmicas com variáveis macroeconômicas @bhargava2014fundamentals. A ausência de tais abordagens limita o avanço metodológico da literatura e restringe a aplicação de estratégias fundamentadas em valor a procedimentos excessivamente heurísticos, o que contraria a própria evolução do conceito de investimento baseado em fundamentos.
+
+
 
 
 
 # Metodologia {#sec-metodologia}
 
-Quarta seção a ser escrita
+| **Lacuna Identificada na Justificativa**                                                                 | **Resposta Metodológica Proposta**                                                                                      |
+|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| **Lacuna 1**: Escassez de estudos empíricos aplicando a fórmula de valor intrínseco de Graham no Brasil | Teste empírico comparativo entre carteiras baseadas nos filtros tradicionais e na nova métrica de valor intrínseco, utilizando dados de empresas listadas na B3 |
+| **Lacuna 2**: Limitações metodológicas dos estudos anteriores (ex: períodos amostrais restritos, métricas limitadas) | Ampliação do período de análise para uma janela temporal mais robusta ([2014–2024]) e uso de múltiplas métricas de avaliação de desempenho ajustado ao risco (ex: Sharpe, alfa de Jensen) |
+| **Lacuna 3**: Ausência de ferramentas educacionais voltadas para investidores iniciantes                 | Desenvolvimento do aplicativo *GrahamLab*, com interface intuitiva e recursos interativos de visualização e simulação de carteiras com base nos filtros de valor |
+
+## Vinculação Metodológica com a Revisão de Literatura
+
+A metodologia proposta foi estruturada para responder a três lacunas centrais identificadas na literatura nacional sobre value investing. A primeira refere-se à aplicação ainda incipiente da fórmula de valor intrínseco de Graham no mercado brasileiro, cuja validação empírica permanece limitada. A segunda lacuna diz respeito à escassez de estudos que realizem comparações diretas entre diferentes filtros fundamentalistas — como P/L, P/VPA, dividend yield e a métrica $\sqrt{22{,}5 \times LPA \times VPA}$ — ao longo de janelas temporais mais amplas e com avaliação de desempenho ajustado ao risco. Por fim, destaca-se a ausência de ferramentas educacionais acessíveis voltadas a investidores iniciantes e estudantes, dificultando a difusão prática da filosofia de investimento em valor.
+
+Para enfrentar essas limitações, este estudo adota uma abordagem quantitativa e comparativa, estruturada em duas frentes principais:
+(i) a construção e avaliação de carteiras de ações com base em filtros fundamentalistas clássicos e em uma nova métrica de valor intrínseco inspirada na fórmula de Graham;
+(ii) o desenvolvimento de uma aplicação computacional interativa (GrahamLab), com foco educacional e de simulação de portfólios.
+
+A etapa de construção das carteiras será orientada por uma comparação sistemática com os critérios estabelecidos por @palazzo2018carteiras, referência importante na adaptação dos filtros de Graham ao mercado brasileiro. O objetivo é investigar se a métrica alternativa baseada na fórmula de valor intrínseco proposta por Graham é capaz de gerar retornos ajustados ao risco superiores aos filtros tradicionais, contribuindo assim para o aprimoramento das estratégias de seleção de ativos subvalorizados no contexto nacional.
+
+## Período amostral e justificativa
+
+O estudo abrangerá o período de 31 de Março de 2014 a 30 de Junho de 2024. Essa janela temporal foi selecionada com o objetivo de capturar diferentes fases do ciclo econômico brasileiro, incluindo momentos de crise, recuperação e expansão, como a recessão de 2015–2016, a retomada gradual do crescimento até 2019, os impactos da pandemia de COVID-19 em 2020 e os desdobramentos macroeconômicos recentes até 2024.
+
+A escolha desse intervalo visa garantir a robustez da análise empírica, permitindo avaliar se os filtros de valor — incluindo a fórmula de Graham — mantêm desempenho consistente em cenários de alta volatilidade, queda de lucros, variação dos juros e diferentes níveis de confiança do mercado. Além disso, o horizonte mais amplo possibilita o cálculo de métricas como retornos acumulados, Sharpe e alfa de Jensen com maior significância estatística.
+
+## Dados e critérios de seleção
+
+Os dados fundamentalistas serão obtidos por meio da base Economática, abrangendo todas as empresas listadas na B3 ao longo do período de análise. A amostra será filtrada de forma a excluir empresas do setor financeiro, em razão das suas particularidades contábeis, que dificultam a aplicação homogênea dos filtros fundamentalistas tradicionais. Serão também removidas da amostra as companhias que não apresentarem negociação em menos de [90]% dos pregões dentro do intervalo selecionado, assegurando um critério mínimo de liquidez e replicabilidade das carteiras em condições realistas de mercado.
+
+Adicionalmente, os dados de preços e indicadores financeiros serão ajustados por eventos societários relevantes, como desdobramentos (splits), bonificações e dividendos, de modo a refletir com precisão o retorno econômico efetivo dos ativos e garantir a comparabilidade intertemporal dos múltiplos utilizados nos filtros.
+
+O estudo adota como base os sete filtros originalmente propostos por Benjamin Graham, conforme adaptados por Palazzo (2018) para o mercado brasileiro:
+
+1- Tamanho mínimo da empresa (faturamento anual superior a R$ 300 milhões);
+
+2- Liquidez corrente superior à mediana do mercado = 1,22
+
+3- Lucros ininterruptos por no mínimo cinco anos;
+
+4- Distribuição de dividendos nos últimos cinco anos;
+
+5- Crescimento dos lucros por ação - 13,6 % - últimos 5 anos
+
+6- P/L inferior ou igual 7,54
+
+7- P/VPA inferior a 1,0
+
+Como contribuição metodológica original, será incorporada uma métrica alternativa de valor intrínseco, baseada na equação documentada por Graham:
 
 
-## Dados
+$\sqrt{22.5 \times LPA \times VPA}$
 
-Descrição precisa dos dados que serão utilizados...
+Esta métrica será testada como um filtro adicional e será comparada diretamente às carteiras construídas com os critérios de Pallazo, com o objetivo de verificar sua capacidade preditiva de retornos superiores e sua contribuição à eficiência do processo de seleção.
 
 
 
@@ -135,14 +477,28 @@ Descrição precisa dos dados que serão utilizados...
 
 # Resultados Esperados {#sec-esperados}
 
-Quinta seção a ser escrita.
 
+
+Espera-se que as carteiras construídas com base nos filtros de Graham adaptados ao mercado brasileiro, conforme propostos por Pallazo (2018), apresentem desempenho superior ao do índice de referência (Ibovespa), tanto em termos de retorno absoluto quanto de retorno ajustado ao risco, medido por indicadores como o índice de Sharpe e o alpha de Jensen.
+
+Com a introdução da nova métrica de valor intrínseco, derivada da fórmula clássica de Graham, o estudo busca verificar se essa abordagem apresenta maior eficácia na identificação de ativos subvalorizados. Assim, espera-se que as carteiras baseadas nesse novo critério:
+
+1- Alcancem retornos médios superiores aos das carteiras baseadas apenas nos múltiplos tradicionais (P/L, P/VPA, dividend yield);
+
+2- Apresentem menor volatilidade do que o Ibovespa e carteiras não filtradas;
+
+3- Gerem alphas positivos e estatisticamente significativos, indicando desempenho acima do mercado ajustado ao risco;
+
+4- Destaquem a importância do valor intrínseco como ferramenta complementar ou alternativa às métricas tradicionais de valuation.
+
+Além disso, espera-se que a análise comparativa entre as diferentes estratégias contribua para refinar o processo de seleção de ações sob a ótica do value investing, propondo uma alternativa mais aderente às especificidades do mercado brasileiro contemporâneo.
+
+Por fim, como resultado aplicado, a construção do aplicativo de simulação e acompanhamento de carteiras permitirá transformar os achados da pesquisa em uma ferramenta educacional prática. Espera-se que esse recurso auxilie na disseminação da educação financeira e na compreensão dos princípios do value investing entre alunos e investidores iniciantes.
 
 
 # Cronograma {#sec-cronograma}
 
-Sexta seção a ser criada, basta editar o código com as tarefas 
-e datas iniciais e finais no código do gráfio a seguir.
+
 
 
 ```{r}
