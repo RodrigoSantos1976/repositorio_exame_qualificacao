@@ -168,55 +168,35 @@ Embora o foco desta subseção seja a produção nacional, é relevante destacar
 | Rossi Jr. (2022)        | 2015–2020   | Rebalanceamento + setor         | Melhor desempenho ajustado ao risco                          | Aproximação dinâmica entre preço e fundamentos               |
 
 
-## Lacunas de Pesquisa e justificativas
+## Lacunas de Pesquisa e Justificativa
+
+### Lacuna de pesquisa
+
+A análise dos estudos brasileiros revisados (Tabela 1) revela três limitações consistentes na aplicação do value investing:
+
+(1) Foco fragmentado em múltiplos isolados: Trabalhos como @palazzo2018carteiras e @almeida2019value testaram múltiplos fundamentalistas como P/L e P/VPA separadamente, sem integrá-los em um modelo unificado de valuation, replicando a abordagem de @fama1992cross, porém ignorando a síntese proposta pela fórmula de Graham.
+
+(2) Gestão passiva de carteiras: Estudos nacionais, incluindo @rossijunior2022filtros, adotaram abordagens 'buy and hold' ou rebalanceamentos fixos no tempo, sem critérios dinâmicos baseados na relação preço/valor intrínseco, contrariando o princípio da margem de segurança @graham2003intelligent.
+
+(3) Subutilização da fórmula √22,5 × LPA × VPA: Apesar de citada por autores como @salgueiro2007comparacao e @passos2009estrategias, a fórmula nunca foi operacionalizada explicitamente como critério central para entrada e saída de ativos no mercado brasileiro, diferentemente do estudo pioneiro de @srivastava2020portfolio nos mercados indiano e norte-americano.
+
+Essas lacunas sugerem a necessidade de estudos que operacionalizem integralmente a fórmula clássica do valor intrínseco proposta por Graham em um modelo integrado e dinâmico. Ao operacionalizar essa lógica, a abordagem possibilita uma investigação mais robusta sobre a relação entre o grau de subavaliação fundamental e os retornos subsequentes, testar a hipótese de convergência dos preços de mercado ao valor teórico ao longo do tempo. Com isso, o estudo avança em relação às contribuições de @palazzo2018carteiras e @rossijunior2022filtros, ao integrar critérios de saída fundamentados e rebalanceamento periódico com base na margem de segurança, além de oferecer uma ferramenta analítica para identificar oportunidades com melhor relação risco-retorno e custo de oportunidade mais favorável.
 
 
-Uma busca sistemática conduzida com o apoio da ferramenta Publish or Perish, baseada em dados extraídos do Google Scholar, revelou que a maioria dos estudos brasileiros sobre value investing concentra-se no uso isolado de múltiplos fundamentalistas, como P/L, P/VPA, ROE e dividend yield. Apesar de amplamente utilizados como proxies de valor, esses indicadores raramente são combinados em uma métrica integrada de avaliação.
-
-Apesar dos resultados expressivos alcançados por @pinheiro2009value, que aplicaram filtros alinhados aos critérios originais de Graham e obtiveram desempenho acumulado superior ao Ibovespa, o estudo compartilha com outros trabalhos da literatura a limitação de manter a carteira inalterada ao longo de todo o período de análise, sem adoção de um critério sistemático de saída. A ausência de rebalanceamento periódico e de mecanismos baseados na margem de segurança compromete a aplicabilidade prática da estratégia e limita a capacidade de adaptação às variações do mercado.
-
-Embora amplamente referida na literatura clássica, a fórmula $\sqrt{22{,}5 \times LPA \times VPA}$ raramente é operacionalizada de forma explícita como métrica principal para entrada e saída de ativos em carteiras no mercado brasileiro. Uma aplicação aderente ao modelo original pressuporia, por exemplo, a entrada em ativos com preço inferior a dois terços do valor intrínseco estimado, além de um rebalanceamento periódico (como anual), de modo a manter apenas aquelas empresas que preservem margem de segurança suficiente em relação ao valor justo. Ainda que alguns trabalhos discutam variáveis compatíveis com a lógica do valuation fundamentalista — como retorno sobre o capital investido ou margem bruta — poucos incorporam tais elementos em um modelo consolidado de precificação. Estudos como @zeidler2014magic e @ko2014value exploram variações fundamentadas em múltiplos, mas não operacionalizam diretamente a fórmula de Graham como núcleo decisório, indicando uma lacuna relevante e uma oportunidade para aprofundamento teórico-metodológico.
-
-Dentre os estudos mapeados, o trabalho de  @srivastava2020portfolio se destaca como o único que aplica diretamente a fórmula revisada de valor intrínseco proposta por Graham, combinando-a com múltiplos fundamentalistas clássicos. Os autores testaram a estratégia tanto no mercado indiano (Nifty 50) quanto no norte-americano (Dow Jones), no período de 2014 a 2020, e constataram que as carteiras formadas superaram de forma consistente a estratégia passiva de Buy and Hold em ambos os mercados. Os elevados índices de Sharpe observados — 1,31 na Índia e 1,72 nos Estados Unidos — reforçam a eficácia da abordagem e evidenciam o potencial da fórmula de Graham como critério estruturante na seleção de ativos. Trata-se, portanto, de uma evidência empírica rara na literatura que operacionaliza de forma clara o uso dessa métrica.
-
-Diferentemente dos múltiplos fundamentalistas utilizados isoladamente, a fórmula de Graham incorpora uma visão integrada do valor econômico da empresa, funcionando como um indicador sintético de subavaliação. Sua simplicidade operacional e fundamentação conceitual permitem não apenas sua aplicação em processos de triagem de ações, mas também a construção de métricas comparativas entre preço de mercado e valor teórico, oferecendo um parâmetro objetivo para avaliar a convergência entre valor e preço ao longo do tempo. No entanto, a maioria dos estudos empíricos brasileiros, como os de @salgueiro2007comparacao, @pinheiro2009value e @almeida2011graham, fundamenta-se no uso isolado de múltiplos contábeis, como P/L, P/VPA e ROE, sem estimar de forma explícita o valor intrínseco. Mesmo em trabalhos mais recentes e robustos, como @palazzo2018carteiras, observa-se a ausência da operacionalização da fórmula de Graham como núcleo decisório, o que compromete a possibilidade de avaliar sistematicamente a existência de margem de segurança e a eventual convergência de preços ao valor estimado.
-
-Nesse sentido, a adoção da fórmula de valor intrínseco como métrica principal de avaliação representa não apenas uma inovação metodológica, mas também uma oportunidade de resgatar o conceito original de valor em sua forma mais estruturada, objetiva e replicável. Embora @rossijunior2022filtros tenha contribuído significativamente ao incorporar o rebalanceamento periódico como alternativa ao modelo passivo tradicional, sua proposta ainda não integra a fórmula de Graham como critério explícito para permanência ou saída dos ativos. A aplicação sistemática da fórmula, por sua vez, além de auxiliar na identificação de ativos subavaliados, oferece um norte ao sinalizar quando o preço de mercado se aproxima do valor intrínseco estimado. Dessa forma, respeita-se o princípio da margem de segurança e promove-se uma abordagem mais disciplinada e fundamentada para a realização de lucros.
-
-
-A aplicação da fórmula de valor intrínseco de Graham pode oferecer ainda um importante ponto de ancoragem para decisões de investimento em diferentes ciclos econômicos. Em contextos adversos, como em mercados em baixa com juros elevados, a fórmula auxilia na identificação de empresas subavaliadas que mantêm fundamentos sólidos como observado por @holloway2012graham, revelando oportunidades de compra com ampla margem de segurança. Já em cenários de euforia ou liquidez excessiva, como em bull markets com SELIC baixa, o valor intrínseco atua como um limitador racional, sinalizando potenciais bolhas e prevenindo decisões baseadas em múltiplos inflacionados. Dessa forma, o uso da fórmula não apenas orienta o ponto de entrada, mas também contribui para uma leitura crítica do contexto macroeconômico, permitindo ao investidor calibrar suas escolhas com base em fundamentos e não apenas em movimentos de mercado.
-
-
-Nesse contexto, o presente trabalho busca superar as limitações identificadas na literatura ao propor uma métrica fundamentada diretamente na fórmula de valor intrínseco de Graham. Ao operacionalizar essa lógica, a abordagem possibilita uma investigação mais robusta sobre a relação entre o grau de subavaliação fundamental e os retornos subsequentes, testar a hipótese de convergência dos preços de mercado ao valor teórico ao longo do tempo. Com isso, o estudo avança em relação às contribuições de @palazzo2018carteiras e @rossijunior2022filtros, ao integrar critérios de saída fundamentados e rebalanceamento periódico com base na margem de segurança, além de oferecer uma ferramenta analítica para identificar oportunidades com melhor relação risco-retorno e custo de oportunidade mais favorável.
 
 ### Justificativa {#sec-justificativa}
 
   
-A pesquisa busca avaliar empiricamente a eficácia de filtros de value investing adaptados ao mercado nacional, contribuindo com evidências práticas que podem auxiliar investidores na identificação de ativos subvalorizados e propondo uma aplicação educacional inovadora que aproxima teoria e prática  
+Este estudo justifica-se por abordar especificamente as limitações identificadas na literatura através de uma abordagem estruturada em três pontos principais:
 
-### Ponto de vista acadêmico 
+Integração métrica: Como a revisão mostrou uma fragmentação metodológica, este estudo propõe utilizar a fórmula clássica de Graham como núcleo decisório (em contraste com os filtros isolados de @palazzo2018carteiras. Isso visa superar a fragmentação por meio de uma métrica unificada, combinando lucratividade (LPA) e base patrimonial (VPA) conforme originalmente sugerido por @graham1934security.
 
-A literatura sobre value investing é amplamente consolidada em mercados desenvolvidos, especialmente nos Estados Unidos, onde diversos estudos associam métricas fundamentalistas ao desempenho superior de ações no longo prazo. No contexto brasileiro, observa-se um crescente interesse por essa abordagem, com adaptações dos filtros clássicos de Graham à realidade local, como exemplificado por @palazzo2018carteiras. Apesar desse avanço, a utilização da fórmula original de valor intrínseco proposta por Graham como critério central de seleção ainda representa uma oportunidade promissora de aprofundamento nas análises empíricas do mercado nacional.
+Gestão ativa fundamentada: Avançando em relação aos rebalanceamentos 
+calendarizados de @rossijunior2022filtros, propõe-se implementar um mecanismo dinâmico de entrada e saída baseado explicitamente na margem de segurança. Essa abordagem operacionaliza diretamente o conceito proposto por @graham2003intelligent, usando critérios objetivos e fundamentados na convergência preço-valor intrínseco.
 
-A fórmula de valor intrínseco proposta por Graham, amplamente reconhecida por sua simplicidade e fundamentação teórica, serve de base para a métrica adotada neste estudo. Ao combinar indicadores de rentabilidade e de valor patrimonial em uma única expressão, a proposta oferece uma alternativa objetiva e direta aos filtros tradicionalmente utilizados na seleção de ações. Essa abordagem representa uma contribuição relevante tanto no campo acadêmico quanto na prática de investimentos, ao ampliar as possibilidades de identificação de ativos com potencial de valorização no longo prazo.
+Ponte empírica internacional: Considerando a subutilização da fórmula no Brasil, este estudo propõe testar sistematicamente a fórmula de Graham no mercado nacional, estabelecendo comparações diretas com resultados internacionais, especialmente os de @srivastava2020portfolio. Isso permitirá avaliar a eficácia e relevância global dessa abordagem em mercados emergentes.
 
-Além disso, a comparação entre essa nova métrica e os filtros adaptados por @palazzo2018carteiras permitirá avaliar se metodologias baseadas em fundamentos econômicos clássicos ainda possuem validade preditiva em um mercado emergente como o brasileiro. A presente pesquisa contribui, portanto, não apenas para o debate sobre eficiência de mercado, como também para a compreensão das anomalias de valor documentadas por @fama1992cross, ao considerar um ambiente com características institucionais particulares, como liquidez restrita, alta concentração setorial e assimetria informacional.
-
-Essa discussão conecta-se também com áreas mais recentes da literatura, como as finanças comportamentais, ao reconhecer que decisões de investimento podem ser influenciadas por vieses cognitivos, e com os modelos multifatoriais de precificação de ativos, que ampliam o entendimento sobre o risco e retorno esperado. Nesse sentido, a métrica proposta pode ser vista como uma proxy alternativa para fatores de valor, contribuindo para o refinamento de estratégias que vão além do modelo CAPM tradicional.
-
-### Ponto de vista prático 
-Do ponto de vista do investidor, a seleção eficiente de ativos continua sendo um dos maiores desafios na busca por retornos superiores ajustados ao risco. A diversidade de opções no mercado financeiro, somada à volatilidade acentuada, reforça a importância de estratégias bem fundamentadas para lidar com ciclos econômicos adversos e oscilações abruptas de preços.
-
-Simultaneamente, o número de investidores pessoa física na B3 aumentou em mais de 500% nos ultimos 5 anos, saltando de 1 milhão para mais de 6 milhões de contas ativas. Esse crescimento expressivo evidencia uma lacuna urgente no que se refere à educação financeira e à acessibilidade a ferramentas analíticas que auxiliem o investidor iniciante a tomar decisões mais fundamentadas, reduzindo a exposição a erros comportamentais e decisões baseadas apenas em intuições de curto prazo.
-
-Neste cenário, este estudo propõe-se a desenvolver uma ferramenta de análise baseadas em fundamentos sólidos, que permitam aos investidores otimizar suas escolhas, minimizar riscos e tomar decisões com maior nível de racionalidade técnica. A aplicação de uma nova métrica inspirada na fórmula original de valor intrínseco de Benjamin Graham representa não apenas uma contribuição metodológica para a literatura acadêmica, mas também uma abordagem prática para a identificação sistemática de oportunidades de investimento, com potencial de reduzir a dependência de vieses subjetivos e maximizar a eficiência do processo decisório.
-
-A justificativa para essa iniciativa ainda está amparada pela baixa penetração de práticas de análise fundamentalista entre investidores brasileiros: segundo dados recentes da B3 (2024), apenas 12% dos investidores pessoas físicas relatam utilizar critérios técnico-contábeis em suas decisões. O GrahamLab busca preencher essa lacuna, ao oferecer uma plataforma intuitiva que conecta teoria e prática, permitindo a visualização dinâmica dos impactos das estratégias testadas.
-
-O impacto educacional e social da proposta também merece destaque. Em um país onde apenas 3% da população economicamente ativa investe diretamente em ações, iniciativas que democratizam o acesso ao conhecimento técnico de qualidade podem desempenhar um papel transformador. 
-
-  Diante do exposto, este projeto apresenta potencial significativo de contribuição científica e tecnológica. Do ponto de vista acadêmico, o presente estudo preenche uma lacuna específica na literatura nacional ao propor e testar uma metodologia alternativa de seleção e gestão de ativos fundamentada na fórmula original de valor intrínseco de Benjamin Graham — uma abordagem reconhecida internacionalmente, mas ainda pouco explorada de forma operacional no contexto brasileiro. Diferentemente de modelos que utilizam múltiplos fundamentalistas de forma isolada, a estratégia aqui adotada aplica a fórmula tanto como critério de entrada, quando o preço de mercado apresenta desconto substancial em relação ao valor estimado, quanto como critério de saída, ao excluir ativos que atingem ou superam esse valor intrínseco. Essa lógica de reavaliação periódica confere maior aderência ao princípio da margem de segurança e amplia a aplicabilidade prática da filosofia de Graham, permitindo testar se a convergência entre preço e valor ao longo do tempo se traduz em retornos ajustados ao risco superiores ao benchmark.Do ponto de vista técnico e prático, o desenvolvimento do GrahamLab, uma ferramenta educacional interativa e aplicada, representa uma inovação relevante para o ensino e a difusão da análise fundamentalista no Brasil. Essa plataforma contribuirá para a formação de investidores mais preparados e conscientes, conectando teoria e prática de forma acessível, didática e escalável. Ao integrar esses dois eixos — o rigor analítico da pesquisa científica e a aplicação prática por meio de tecnologia educacional —, o projeto consolida-se como uma proposta de alto valor para a academia, o mercado e a sociedade.
-
+Essas justificativas reforçam a relevância acadêmica e prática da pesquisa, com potencial de contribuir significativamente para a literatura nacional e internacional sobre estratégias fundamentadas no valor intrínseco. Conforme demonstrado, a literatura nacional sobre value investing carece de estudos que: (a) integrem múltiplos fundamentalistas em um modelo unificado de valuation @graham1934security, (b) implementem critérios objetivos de saída baseados na relação preço/valor intrínseco @graham2003intelligent, e (c) testem sistematicamente a fórmula √22,5 × LPA × VPA como núcleo decisório @srivastava2020portfolio. Este projeto aborda essas lacunas através de uma metodologia que combina integração métrica, gestão ativa fundamentada e validação empírica internacional.
 
 # Objetivos {#sec-objetivos}
 
@@ -224,17 +204,27 @@ O impacto educacional e social da proposta também merece destaque. Em um país 
 
 ## Objetivo Geral {#sec-objgeral}
 
-  O presente estudo tem como objetivo avaliar o desempenho de estratégias de value investing no mercado brasileiro, comparando carteiras construídas a partir dos filtros adaptados por @palazzo2018carteiras com uma nova abordagem baseada na fórmula de valor intrínseco de Graham. A avaliação será realizada através de métricas de retorno ajustado ao risco (índice deSharpe e alfa de Jensen), utilizando dados de empresas listadas na B3 no período de 2014-2024.
+ Avaliar a eficácia da fórmula de valor intrínseco de Graham como framework integrado de seleção e gestão de carteiras no mercado brasileiro, superando as três principais limitações identificadas na literatura nacional: (1) fragmentação metodológica, (2) gestão passiva, e (3) subutilização da fórmula √22,5 × LPA × VPA. A avaliação será realizada através de métricas de retorno ajustado ao risco (índice de Sharpe e alfa de Jensen), utilizando dados de empresas listadas na B3 no período de 2014-2024.
 
+Diante das lacunas e das questões destacadas, este estudo propõe testar a seguinte hipótese:
 
+H₁: A aplicação sistemática da fórmula de valor intrínseco proposta por Graham gera retornos ajustados ao risco superiores aos obtidos pelos filtros tradicionais adaptados por Palazzo et al. (2018), no mercado brasileiro no período analisado
 
 
 ## Objetivos Específicos {#sec-objespecficos}
 
+Comparar o desempenho ajustado ao risco de carteiras formadas pela fórmula de graham com aquelas baseadas nos filtros fragmentados de @palazzo2018carteiras, testando a hipótese de que a abordagem integrada produz alfas de Jensen mais significativos (p < 0,05) no período 2014-2024;
+
+Implementar e validar um protocolo de saída dinâmica baseado na convergência preço/valor intrínseco, medindo seu impacto na redução da volatilidade em comparação com estratégias buy-and-hold;
+
+Estabelecer benchmarks comparativos com os resultados internacionais de @srivastava2020portfolio através da análise dos índices de Sharpe obtidos nas carteiras brasileiras.
+
 
 ### Artigo 1: Investigando o Prêmio por Valor: Uma Revisão dos Resultados de Pallazo com Aplicação de um Novo Filtro Baseado no Valor Intrínseco 
 
-Este estudo tem como objetivo avaliar empiricamente a eficácia da fórmula de valor intrínseco de Graham como critério estruturante para a seleção e a manutenção de ações no mercado brasileiro, comparando seu desempenho com os sete filtros adaptados por @palazzo2018carteiras. A análise será realizada por meio da construção de carteiras teóricas formadas a partir de dados fundamentalistas de empresas listadas na B3, no período de 2014 a 2024, com avaliação comparativa de métricas de retorno, risco e desempenho ajustado ao risco. Diferentemente de estudos anteriores que se limitaram à seleção inicial de ativos, esta proposta incorpora a fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — tanto como critério de entrada (quando o preço de mercado estiver substancialmente abaixo do valor estimado) quanto como ponto de saída, caso o ativo atinja ou supere seu valor intrínseco estimado. Essa abordagem permite o rebalanceamento periódico das carteiras com base na margem de segurança residual, conferindo maior aderência à filosofia original do value investing. Os resultados obtidos serão comparados com os achados de @palazzo2018carteiras, que apontaram limitações na aplicação isolada do filtro P/L inferior a  7, o qual resultou em carteiras com retornos inferiores ao benchmark e maior exposição ao risco. Nesse sentido, a utilização da fórmula de valor intrínseco proposta por Graham, por integrar múltiplos fundamentais de forma mais abrangente, poderá oferecer uma métrica mais robusta para a identificação e permanência de ativos com maior potencial de valorização no longo prazo.
+
+
+Este estudo tem como objetivo avaliar empiricamente a eficácia da fórmula de valor intrínseco de Graham como critério estruturante para a seleção e a manutenção de ações no mercado brasileiro, comparando seu desempenho com os sete filtros adaptados por @palazzo2018carteiras. A análise será realizada por meio da construção de carteiras teóricas formadas a partir de dados fundamentalistas de empresas listadas na B3, no período de 2014 a 2024, com avaliação comparativa de métricas de retorno, risco e desempenho ajustado ao risco. Esta proposta incorpora a fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — tanto como critério de entrada (quando o preço de mercado estiver substancialmente abaixo do valor estimado) quanto como ponto de saída, caso o ativo atinja ou supere seu valor intrínseco estimado. Essa abordagem permite o rebalanceamento periódico das carteiras com base na margem de segurança residual, conferindo maior aderência à filosofia original do value investing. Os resultados obtidos serão comparados com os achados de @palazzo2018carteiras, que apontaram limitações na aplicação isolada do filtro P/L inferior a  7, o qual resultou em carteiras com retornos inferiores ao benchmark e maior exposição ao risco. 
 
 ### Produto 2 - GrahamLab: Laboratório Digital de Estratégias de Valor para Alunos e Investidores
 
@@ -248,28 +238,41 @@ Considera-se que estes dois objetivos específicos estão conectados e se comple
 
 # Metodologia {#sec-metodologia}
 
+A validade do value investing como estratégia de longo prazo encontra respaldo tanto em fundamentos teóricos quanto em evidências empíricas, sendo frequentemente exemplificada pelas trajetórias bem-sucedidas de investidores como Benjamin Graham e Warren Buffett, que aplicaram de forma consistente os princípios da análise fundamentalista. Como destaca @damodaran2007valuation, o investimento em valor baseia-se na premissa de que os preços de mercado nem sempre refletem adequadamente o valor intrínseco dos ativos, abrindo espaço para ganhos sustentáveis por meio da identificação de ativos subavaliados.
+
+A presente pesquisa adota uma abordagem quantitativa e comparativa, com o objetivo de avaliar a eficácia da aplicação sistemática da fórmula de valor intrínseco de Graham - definido por $\sqrt{22{,}5 \times LPA \times VPA}$ - no processo de seleção e gestão de carteiras no mercado acionário brasileiro. A estratégia consiste na inclusão de ativos cujos preços estejam inferiores a dois terços do valor intrínseco estimado e na exclusão daqueles que atinjam ou superem esse valor, estabelecendo um ponto de saída objetivo e alinhado ao princípio da margem de segurança.
+
+Construção e avaliação de carteiras teóricas
+
+(a) aplicação sistemática dos filtros fundamentalistas propostos por @palazzo2018carteiras, com destaque para a adaptação do critério Preço/Lucro (P/L) de forma a refletir o custo de oportunidade do capital, utilizando a taxa Selic média do período como referência para o investimento livre de risco. A construção da carteira seguirá critérios objetivos de entrada com base nesses filtros
+
+(b) a aplicação sistemática da fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — como critério de entrada (preço inferior a dois terços do valor intrínseco) e saída (preço igual ou superior ao valor estimado);
+
+(c) duas carteira ingênuas composta pelos dez ativos mais líquidos dentro do universo de selecionados, com rebalanceamento trimestral e anual;
+
+(c) uma carteira ingênua composta pelos dez ativos mais líquidos formada segundo os sete filtros fundamentalistas adaptados por Palazzo et al. (2018), representando a abordagem tradicional da literatura nacional (buy-and-hold).
+
+(d) o desenvolvimento de uma aplicação computacional interativa (GrahamLab), com foco educacional e de simulação de portfólios.
 
 
-A metodologia proposta neste estudo busca responder a uma lacuna relevante na literatura nacional ao operacionalizar, de forma sistemática, a fórmula de valor intrínseco de Benjamin Graham como critério completo de seleção e gestão de carteiras. A estratégia consiste na inclusão de ativos cujos preços estejam inferiores a dois terços do valor intrínseco estimado — conforme definido por $\sqrt{22{,}5 \times LPA \times VPA}$ — e na exclusão daqueles que atinjam ou superem esse valor, estabelecendo um ponto de saída objetivo e alinhado ao princípio da margem de segurança. Essa abordagem permite o rebalanceamento anual da carteira, ampliando o controle sobre risco e retorno. Além disso, a proposta será comparada empiricamente com filtros tradicionalmente utilizados, como P/L, P/VPA e dividend yield, ao longo de uma janela temporal estendida, com avaliação de métricas ajustadas ao risco. Por fim, a metodologia será implementada em formato acessível por meio de uma ferramenta educacional, com o intuito de facilitar a aplicação prática por estudantes e investidores iniciantes, contribuindo para a difusão qualificada da filosofia de investimento em valor no Brasil.
 
-Este estudo adota uma abordagem quantitativa e comparativa, estruturada em duas frentes principais:
-(i) a construção e avaliação de carteiras de ações com base em filtros fundamentalistas clássicos e em uma nova métrica de valor intrínseco inspirada na fórmula de Graham;
-(ii) o desenvolvimento de uma aplicação computacional interativa (GrahamLab), com foco educacional e de simulação de portfólios.
-
-A etapa de construção das carteiras será orientada por uma comparação sistemática com os critérios estabelecidos por @palazzo2018carteiras, referência importante na adaptação dos filtros de Graham ao mercado brasileiro. O objetivo é investigar se a métrica alternativa baseada na fórmula de valor intrínseco proposta por Graham é capaz de gerar retornos ajustados ao risco superiores aos filtros tradicionais, contribuindo assim para o aprimoramento das estratégias de seleção de ativos subvalorizados no contexto nacional.Para isso, serão construídas carteiras com base na métrica de Graham, aplicando critérios objetivos de entrada (preço inferior a dois terços do valor intrínseco) e de saída (preço igual ou superior ao valor estimado), com rebalanceamento anual. Os resultados obtidos serão comparados tanto com os das carteiras formadas segundo os filtros de Palazzo quanto com uma estratégia passiva de buy and hold, permitindo analisar os efeitos do rebalanceamento sistemático na performance e na manutenção da margem de segurança ao longo do tempo.
-
+## Dados e critérios de seleção
 
 O estudo abrangerá o período de 31 de dezembro de 2014 a 30 de Junho de 2024. Essa janela temporal foi selecionada com o objetivo de capturar diferentes fases do ciclo econômico brasileiro, incluindo momentos de crise, recuperação e expansão, como a recessão de 2015–2016, a retomada gradual do crescimento até 2019, os impactos da pandemia de COVID-19 em 2020 e os desdobramentos macroeconômicos recentes até 2024.
 
 A escolha desse intervalo visa garantir a robustez da análise empírica, permitindo avaliar se os filtros de valor — incluindo a fórmula de Graham — mantêm desempenho consistente em cenários de alta volatilidade, queda de lucros, variação dos juros e diferentes níveis de confiança do mercado. Além disso, o horizonte mais amplo possibilita o cálculo de métricas como retornos acumulados, Sharpe e alfa de Jensen com maior significância estatística.
 
-## Dados e critérios de seleção
+A base de dados será composta por todas as empresas listadas na B3, excluindo-se:
 
-Os dados fundamentalistas serão obtidos por meio da base Economática, abrangendo todas as empresas listadas na B3 ao longo do período de análise. A amostra será filtrada de forma a excluir empresas do setor financeiro, em razão das suas particularidades contábeis, que dificultam a aplicação homogênea dos filtros fundamentalistas tradicionais. Serão também removidas da amostra as companhias que não apresentarem negociação em menos de [90]% dos pregões dentro do intervalo selecionado, assegurando um critério mínimo de liquidez e replicabilidade das carteiras em condições realistas de mercado.
+(a) companhias do setor financeiro, cujos balanços não são diretamente comparáveis;
+(b) empresas que não apresentarem negociação em pelo menos 90% dos pregões do período, garantindo liquidez mínima;
+(c) ativos com dados inconsistentes ou incompletos.
 
 Adicionalmente, os dados de preços e indicadores financeiros serão ajustados por eventos societários relevantes, como desdobramentos (splits), bonificações e dividendos, de modo a refletir com precisão o retorno econômico efetivo dos ativos e garantir a comparabilidade intertemporal dos múltiplos utilizados nos filtros.
 
 O estudo adota como base os sete filtros originalmente propostos por Benjamin Graham, conforme adaptados por Palazzo (2018) para o mercado brasileiro:
+
+
 
 
 
@@ -293,7 +296,7 @@ Como contribuição metodológica original, será incorporada uma métrica alter
 
 $\sqrt{22.5 \times LPA \times VPA}$
 
-Esta métrica será testada como um filtro adicional e será comparada diretamente às carteiras construídas com os critérios de Pallazo e Graham, com o objetivo de verificar sua capacidade preditiva de retornos superiores e sua contribuição à eficiência do processo de seleção.
+Esta métrica será testada como um filtro adicional e será comparada diretamente às carteiras construídas com os critérios de Pallazo, com o objetivo de verificar sua capacidade preditiva de retornos superiores e sua contribuição à eficiência do processo de seleção.
 
 
 ## Filtro de Faturamento
