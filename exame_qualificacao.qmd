@@ -213,20 +213,18 @@ H₁: A aplicação sistemática da fórmula de valor intrínseco proposta por G
 
 ## Objetivos Específicos {#sec-objespecficos}
 
-Comparar o desempenho ajustado ao risco de carteiras formadas pela fórmula de graham com aquelas baseadas nos filtros fragmentados de @palazzo2018carteiras, testando a hipótese de que a abordagem integrada produz alfas de Jensen mais significativos (p < 0,05) no período 2014-2024;
-
-Implementar e validar um protocolo de saída dinâmica baseado na convergência preço/valor intrínseco, medindo seu impacto na redução da volatilidade em comparação com estratégias buy-and-hold;
-
-Estabelecer benchmarks comparativos com os resultados internacionais de @srivastava2020portfolio através da análise dos índices de Sharpe obtidos nas carteiras brasileiras.
 
 
-### Artigo 1: Investigando o Prêmio por Valor: Uma Revisão dos Resultados de Pallazo com Aplicação de um Novo Filtro Baseado no Valor Intrínseco 
+### Produto Bibliográfico: Artigo Científico
+
+Este artigo avalia a fórmula de Graham mediante três dimensões: (a)
+comparação de desempenho com os filtros de @palazzo2018carteiras, testando a hipótese de que a abordagem integrada produz alfas de Jensen mais significativos (p < 0,05) no período 2014-2024, (b) validação de protocolo de saída dinâmica, e (c) benchmarking internacional comparativo com os resultados internacionais de @srivastava2020portfolio”
+
+A análise será realizada por meio da construção de carteiras teóricas formadas a partir de dados fundamentalistas de empresas listadas na B3, no período de 2014 a 2024, com avaliação comparativa de métricas de retorno, risco e desempenho ajustado ao risco. Esta proposta incorpora a fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — tanto como critério de entrada (quando o preço de mercado estiver substancialmente abaixo do valor estimado) quanto como ponto de saída, caso o ativo atinja ou supere seu valor intrínseco estimado. Essa abordagem permite o rebalanceamento periódico das carteiras com base na margem de segurança residual, conferindo maior aderência à filosofia original do value investing. Os resultados obtidos serão comparados com os achados de @palazzo2018carteiras, que apontaram limitações na aplicação isolada do filtro P/L inferior a  7, o qual resultou em carteiras com retornos inferiores ao benchmark e maior exposição ao risco. 
 
 
+### Produto Técnico: Aplicativo Educacional
 
-Este estudo tem como objetivo avaliar empiricamente a eficácia da fórmula de valor intrínseco de Graham como critério estruturante para a seleção e a manutenção de ações no mercado brasileiro, comparando seu desempenho com os sete filtros adaptados por @palazzo2018carteiras. A análise será realizada por meio da construção de carteiras teóricas formadas a partir de dados fundamentalistas de empresas listadas na B3, no período de 2014 a 2024, com avaliação comparativa de métricas de retorno, risco e desempenho ajustado ao risco. Esta proposta incorpora a fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — tanto como critério de entrada (quando o preço de mercado estiver substancialmente abaixo do valor estimado) quanto como ponto de saída, caso o ativo atinja ou supere seu valor intrínseco estimado. Essa abordagem permite o rebalanceamento periódico das carteiras com base na margem de segurança residual, conferindo maior aderência à filosofia original do value investing. Os resultados obtidos serão comparados com os achados de @palazzo2018carteiras, que apontaram limitações na aplicação isolada do filtro P/L inferior a  7, o qual resultou em carteiras com retornos inferiores ao benchmark e maior exposição ao risco. 
-
-### Produto 2 - GrahamLab: Laboratório Digital de Estratégias de Valor para Alunos e Investidores
 
 Como desdobramento prático deste estudo, propõe-se o desenvolvimento de um aplicativo voltado para a simulação e acompanhamento de carteiras baseadas em estratégias de value investing. O objetivo é permitir que alunos da instituição e demais interessados acompanhem, em tempo real, o desempenho das carteiras montadas com diferentes filtros de valuation, incluindo a nova métrica inspirada na fórmula de Graham.
 
@@ -238,29 +236,16 @@ Considera-se que estes dois objetivos específicos estão conectados e se comple
 
 # Metodologia {#sec-metodologia}
 
-A validade do value investing como estratégia de longo prazo encontra respaldo tanto em fundamentos teóricos quanto em evidências empíricas, sendo frequentemente exemplificada pelas trajetórias bem-sucedidas de investidores como Benjamin Graham e Warren Buffett, que aplicaram de forma consistente os princípios da análise fundamentalista. Como destaca @damodaran2007valuation, o investimento em valor baseia-se na premissa de que os preços de mercado nem sempre refletem adequadamente o valor intrínseco dos ativos, abrindo espaço para ganhos sustentáveis por meio da identificação de ativos subavaliados.
-
-A presente pesquisa adota uma abordagem quantitativa e comparativa, com o objetivo de avaliar a eficácia da aplicação sistemática da fórmula de valor intrínseco de Graham - definido por $\sqrt{22{,}5 \times LPA \times VPA}$ - no processo de seleção e gestão de carteiras no mercado acionário brasileiro. A estratégia consiste na inclusão de ativos cujos preços estejam inferiores a dois terços do valor intrínseco estimado e na exclusão daqueles que atinjam ou superem esse valor, estabelecendo um ponto de saída objetivo e alinhado ao princípio da margem de segurança.
-
-Construção e avaliação de carteiras teóricas
-
-(a) aplicação sistemática dos filtros fundamentalistas propostos por @palazzo2018carteiras, com destaque para a adaptação do critério Preço/Lucro (P/L) de forma a refletir o custo de oportunidade do capital, utilizando a taxa Selic média do período como referência para o investimento livre de risco. A construção da carteira seguirá critérios objetivos de entrada com base nesses filtros
-
-(b) a aplicação sistemática da fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — como critério de entrada (preço inferior a dois terços do valor intrínseco) e saída (preço igual ou superior ao valor estimado);
-
-(c) duas carteira ingênuas composta pelos dez ativos mais líquidos dentro do universo de selecionados, com rebalanceamento trimestral e anual;
-
-(c) uma carteira ingênua composta pelos dez ativos mais líquidos formada segundo os sete filtros fundamentalistas adaptados por Palazzo et al. (2018), representando a abordagem tradicional da literatura nacional (buy-and-hold).
-
-(d) o desenvolvimento de uma aplicação computacional interativa (GrahamLab), com foco educacional e de simulação de portfólios.
-
 
 
 ## Dados e critérios de seleção
 
+
+
 O estudo abrangerá o período de 31 de dezembro de 2014 a 30 de Junho de 2024. Essa janela temporal foi selecionada com o objetivo de capturar diferentes fases do ciclo econômico brasileiro, incluindo momentos de crise, recuperação e expansão, como a recessão de 2015–2016, a retomada gradual do crescimento até 2019, os impactos da pandemia de COVID-19 em 2020 e os desdobramentos macroeconômicos recentes até 2024.
 
 A escolha desse intervalo visa garantir a robustez da análise empírica, permitindo avaliar se os filtros de valor — incluindo a fórmula de Graham — mantêm desempenho consistente em cenários de alta volatilidade, queda de lucros, variação dos juros e diferentes níveis de confiança do mercado. Além disso, o horizonte mais amplo possibilita o cálculo de métricas como retornos acumulados, Sharpe e alfa de Jensen com maior significância estatística.
+
 
 A base de dados será composta por todas as empresas listadas na B3, excluindo-se:
 
@@ -270,9 +255,16 @@ A base de dados será composta por todas as empresas listadas na B3, excluindo-s
 
 Adicionalmente, os dados de preços e indicadores financeiros serão ajustados por eventos societários relevantes, como desdobramentos (splits), bonificações e dividendos, de modo a refletir com precisão o retorno econômico efetivo dos ativos e garantir a comparabilidade intertemporal dos múltiplos utilizados nos filtros.
 
+Os dados serão obtidos da plataforma Economatica®, amplamente utilizada em pesquisas acadêmicas e análises profissionais no Brasil. A base oferece informações padronizadas, históricas e confiáveis sobre indicadores fundamentalistas, séries de preços ajustados, dados de liquidez e proventos das empresas listadas na B3 – Brasil, Bolsa, Balcão.
+
+
+## Estratégias de Seleção de Ativos
+
+
+### Filtros Tradicionais
+
+
 O estudo adota como base os sete filtros originalmente propostos por Benjamin Graham, conforme adaptados por Palazzo (2018) para o mercado brasileiro:
-
-
 
 
 
@@ -291,59 +283,12 @@ O estudo adota como base os sete filtros originalmente propostos por Benjamin Gr
 | 7  | P/VPA (Preço sobre Valor Patrimonial) não deve ser maior que 1,5.                                                                                        | P/VPA inferior a 1,0.                                                                   |
 
 
-Como contribuição metodológica original, será incorporada uma métrica alternativa de valor intrínseco, baseada na equação documentada por Graham:
+A construção de uma carteira fundamentada em value investing exige critérios rigorosos de seleção que assegurem a robustez financeira, a previsibilidade dos resultados e a existência de margem de segurança. Entre os filtros adotados neste estudo, destacam-se: o faturamento mínimo de R$ 300 milhões, com o objetivo de restringir a amostra a empresas de maior porte e liquidez; o índice de liquidez corrente mínima, que sinaliza capacidade de solvência no curto prazo; e os filtros relacionados à consistência nos lucros e ao crescimento dos lucros, cuja referência baseia-se na proposta de Graham de evolução acumulada de 30% em uma década.
+
+Além disso, adotam-se critérios de valuation clássicos como o índice Preço/Lucro (P/L), e o índice Preço/Valor Patrimonial (P/VPA, ambos alinhados ao princípio da margem de segurança. O histórico de distribuição de dividendos também é incorporado como indicador de qualidade e compromisso com o acionista, conforme enfatizado por Graham como um dos sinais mais confiáveis de estabilidade e responsabilidade corporativa. Embora cada filtro possa ser analisado individualmente, sua eficácia reside justamente na abordagem combinada, permitindo a identificação de empresas sólidas, financeiramente resilientes e subavaliadas pelo mercado.
 
 
-$\sqrt{22.5 \times LPA \times VPA}$
-
-Esta métrica será testada como um filtro adicional e será comparada diretamente às carteiras construídas com os critérios de Pallazo, com o objetivo de verificar sua capacidade preditiva de retornos superiores e sua contribuição à eficiência do processo de seleção.
-
-
-## Filtro de Faturamento
-
-A seleção de empresas com porte relevante é etapa fundamental em estratégias fundamentadas em value investing, sobretudo quando se busca garantir liquidez, robustez operacional e menor exposição a riscos específicos. Para isso, adota-se neste estudo o critério de faturamento mínimo de R$ 300 milhões anuais, em consonância com a definição legal de grandes empresas segundo a Lei nº 11.638/2007 e o BNDES (2010).
-
-## Filtro de Liquidez Corrente
-
-Esse índice mensura a capacidade da firma de saldar suas dívidas de curto prazo com recursos disponíveis ou passíveis de conversão em caixa no mesmo horizonte temporal. Considerando-se o princípio contábil da continuidade operacional, pressupõe-se que os ativos circulantes sejam continuamente renovados, em intensidade variável, conforme o ciclo operacional da companhia e a gestão dos prazos médios de recebimento, estocagem e pagamento.
-
-@securato2002gestao argumenta que um patamar mínimo adequado para esse índice é igual a 1, o que indica a existência de capital circulante líquido positivo — posição corroborada por @assaf2002financas e originalmente sugerida por @graham1934security. No entanto, é importante ressaltar que índices muito elevados não são necessariamente desejáveis: segundo @securato2002gestao, uma liquidez corrente excessiva pode revelar ineficiências na gestão financeira, como alocação ineficaz de recursos, menor rotatividade dos ativos e perda de oportunidades de investimento e crescimento.
-
-## Filtro do histórico de dividendos
-
-O investimento em ações pode gerar retorno de duas formas principais: por meio da distribuição periódica de dividendos ou pela valorização do capital investido ao longo do tempo. No contexto do value investing, Benjamin Graham demonstrava especial apreço pelos dividendos, uma vez que sua concepção de investimento estava intimamente relacionada ao princípio da segurança do capital. Assim como nos títulos de renda fixa, Graham valorizava retornos previsíveis e tangíveis também em investimentos em renda variável, considerando essencial que as companhias demonstrassem compromisso com a remuneração constante aos seus acionistas.
-
-No clássico Security Analysis, Graham argumenta que o propósito primordial de uma empresa é gerar retorno ao investidor, o que se traduz, idealmente, em pagamentos regulares de dividendos. Uma empresa bem-sucedida, portanto, seria aquela capaz de distribuir lucros de maneira consistente e, preferencialmente, crescente. Em O Investidor Inteligente, @graham2003intelligent reforça esse entendimento ao afirmar:
-
-"Um dos testes mais persuasivos da alta qualidade [de uma empresa] é um histórico ininterrupto de pagamento de dividendos por muitos anos. Consideramos que um registro contínuo de dividendos por pelo menos vinte anos é um indicativo positivo relevante para a classificação de qualidade de uma companhia. O investidor defensivo pode, inclusive, considerar adequado restringir suas compras às empresas aprovadas por esse critério."
-
-Apesar de a teoria financeira tradicional sugerir que a retenção de lucros seria preferível, sob o argumento de que isso fortalece a estrutura de capital e amplia a capacidade de reinvestimento, @graham2003intelligent observava que os mercados nem sempre reagiam positivamente a essa lógica. Segundo ele, os investidores frequentemente valorizam mais o dividendo efetivamente recebido do que lucros retidos cuja aplicação futura é incerta. Como evidência, Graham apontava que anúncios de dividendos extraordinários tendiam a provocar valorização imediata das ações, enquanto lucros retidos não geravam necessariamente percepção de valor adicional.
-
-
-## Filtro do histórico de lucros 
-
-A consistência nos resultados financeiros é uma das premissas centrais da filosofia do value investing, sendo amplamente defendida por Benjamin Graham. Empresas que apresentam lucros contínuos, mesmo em cenários econômicos adversos, tendem a ser mais previsíveis em termos de desempenho futuro, o que facilita tanto a aplicação de múltiplos comparativos quanto a realização de avaliações baseadas em fluxo de caixa descontado. A previsibilidade dos lucros confere maior segurança ao investidor, uma vez que reduz o risco de surpresas negativas e torna mais confiável a estimativa do valor intrínseco. Nesse contexto, é importante destacar que os filtros de lucros ininterruptos e de crescimento dos lucros não são redundantes, mas sim complementares. Uma empresa pode apresentar lucros positivos de forma contínua, mas sem trajetória de crescimento — ou até mesmo com leve retração — sendo, nesse caso, aprovada no primeiro critério e reprovada no segundo. A utilização combinada desses filtros permite qualificar um subconjunto mais restrito de empresas, composto por aquelas que, além de apresentarem estabilidade nos resultados, também demonstram capacidade de expansão ao longo do tempo. Empresas que conciliam previsibilidade e crescimento são particularmente valorizadas em estratégias fundamentadas, pois tendem a combinar menor risco operacional com maior potencial de valorização dos lucros futuros — atributos especialmente relevantes para a construção de uma carteira defensiva com perspectiva de valorização sustentada. Com base nesse racional, um dos filtros originalmente propostos por Graham recomenda a seleção de companhias que apresentem lucros ininterruptos por, no mínimo, dez anos consecutivos. Esse critério busca eliminar empresas cíclicas ou instáveis, restringindo a análise a companhias com histórico comprovado de rentabilidade ao longo de diferentes fases do ciclo econômico.
-
-
-## Filtro do crescimento dos lucros
-
-
-Para que se possa analisar se um negócio é atraente para fins de investimento, uma das etapas preliminares mais recomendadas consiste em avaliar a evolução dos lucros auferidos pelas empresas ao longo do tempo.Nesse contexto, Benjamin Graham recomendava avaliar o comportamento dos lucros por ação em janelas longas de tempo, preferencialmente de dez anos, a fim de capturar não apenas a consistência dos resultados, mas também evidências de crescimento sustentado. A lógica por trás dessa exigência reside na noção de que negócios sólidos e perenes devem apresentar lucros crescentes ao longo do tempo, mesmo diante de diferentes fases do ciclo econômico. Além disso, o crescimento dos lucros ajuda a compensar os efeitos da inflação sobre o poder de compra do capital investido. Graham propôs como referência mínima um crescimento acumulado de 30% nos lucros por ação ao longo da década — o que equivale a uma taxa média composta de crescimento anual (CAGR) de aproximadamente 2,66% ao ano.
-
-
-## Filtro de preço-lucro
-
-O índice Preço/Lucro (P/L) é amplamente adotado como uma métrica fundamentalista clássica, medindo a relação entre o valor de mercado de uma ação e seu lucro por ação (LPA). Na perspectiva de Benjamin Graham, esse indicador deveria manter-se abaixo de 15 vezes a média dos lucros dos últimos três anos, de modo a evitar a supervalorização com base em resultados pontuais e fornecer uma margem de segurança ao investidor. A suavização pela média trienal visa reduzir a influência de lucros excepcionalmente altos ou baixos, garantindo uma análise mais equilibrada.
-
-Contudo, evidências empíricas apresentadas por @palazzo2018carteiras sugerem que o filtro de P/L, quando utilizado de forma isolada, apresentou baixa relevância estatística na explicação dos retornos superiores no mercado brasileiro. Em especial, carteiras formadas exclusivamente com ações de P/L inferior a 7 não se destacaram quanto ao desempenho ajustado ao risco. Isso indica que, embora útil como indicador de valuation, o P/L não deve ser adotado de maneira autônoma no processo de seleção de ações. Seu uso ganha maior eficácia quando combinado a outros critérios, como rentabilidade, liquidez e histórico de lucros, conforme propõe a abordagem mais abrangente de Graham.
-
-
-## Filtro de preço-valor patrimonial
-
-O índice Preço sobre Valor Patrimonial (P/VPA) representa a razão entre o preço de mercado da ação e seu valor contábil por ação. Na perspectiva de @graham2003intelligent, esse múltiplo não deveria ultrapassar 1,5, de forma a assegurar que o investidor não esteja pagando um prêmio excessivo sobre o patrimônio líquido da empresa. Quando o P/VPA é inferior a 1,0, o mercado está precificando a empresa abaixo do valor contábil de seus ativos, o que pode indicar uma oportunidade de aquisição com margem de segurança — princípio central do value investing.
-
-
-## Filtro extra: Fórmula do Valor Intrínseco de Graham
+### Fórmula de Graham
 
 
 Como critério complementar à triagem tradicional, este estudo incorpora o uso direto da fórmula do valor intrínseco proposta por Graham, definida como: $$
@@ -351,6 +296,31 @@ V = \sqrt{22{,}5 \times LPA \times VPA}$$ em que LPA representa o lucro por aç�
 
 Essa abordagem permite não apenas selecionar ações com forte desconto em relação aos seus fundamentos, mas também estabelecer uma lógica objetiva para desinvestimento. Ao combinar critérios de entrada e saída baseados em valor, o modelo contribui para uma gestão mais disciplinada da carteira e para decisões fundamentadas em análise de fundamentos. A utilização sistemática dessa fórmula, conforme discutido por @srivastava2020portfolio, está associada a melhores relações risco-retorno, sobretudo quando combinada com rebalanceamentos periódicos, conforme sugerido por @rossijunior2022filtros.
 
+
+### Construção das Carteiras
+
+A validade do value investing como estratégia de longo prazo encontra respaldo tanto em fundamentos teóricos quanto em evidências empíricas, sendo frequentemente exemplificada pelas trajetórias bem-sucedidas de investidores como Benjamin Graham e Warren Buffett, que aplicaram de forma consistente os princípios da análise fundamentalista. Como destaca @damodaran2007valuation, o investimento em valor baseia-se na premissa de que os preços de mercado nem sempre refletem adequadamente o valor intrínseco dos ativos, abrindo espaço para ganhos sustentáveis por meio da identificação de ativos subavaliados.
+
+A presente pesquisa adota uma abordagem quantitativa e comparativa, com o objetivo de avaliar a eficácia da aplicação sistemática da fórmula de valor intrínseco de Graham no processo de seleção e gestão de carteiras no mercado acionário brasileiro. A estratégia consiste na inclusão de ativos cujos preços estejam inferiores a dois terços do valor intrínseco estimado e na exclusão daqueles que atinjam ou superem esse valor, estabelecendo um ponto de saída objetivo e alinhado ao princípio da margem de segurança.
+
+Construção e avaliação de carteiras teóricas
+
+(a) aplicação sistemática dos filtros fundamentalistas propostos por @palazzo2018carteiras, com destaque para a adaptação do critério Preço/Lucro (P/L) de forma a refletir o custo de oportunidade do capital, utilizando a taxa Selic média do período como referência para o investimento livre de risco. A construção da carteira seguirá critérios objetivos de entrada com base nesses filtros
+
+(b) a aplicação sistemática da fórmula de Graham — $\sqrt{22{,}5 \times LPA \times VPA}$ — como critério de entrada (preço inferior a dois terços do valor intrínseco) e saída (preço igual ou superior ao valor estimado);
+
+(c) uma carteira ingênua composta pelos dez ativos mais líquidos dentro do universo de selecionados, com rebalanceamento trimestral;
+
+(d) uma carteira ingênua composta pelos dez ativos mais líquidos dentro do universo de selecionados, com rebalanceamento anual;
+
+(c) uma carteira ingênua composta pelos dez ativos mais líquidos formada segundo os sete filtros fundamentalistas adaptados por Palazzo et al. (2018), representando a abordagem tradicional da literatura nacional (buy-and-hold).
+
+
+### Métricas de Avaliação
+
+A avaliação do desempenho das carteiras será realizada com base em duas métricas clássicas de risco-retorno: o alfa de Jensen e o índice de Sharpe. O alfa de Jensen será estimado por meio do modelo CAPM, a partir de uma regressão linear entre os retornos das carteiras construídas e o retorno do Ibovespa, utilizado como proxy do mercado. O objetivo é verificar a capacidade das estratégias testadas de gerar retornos ajustados ao risco superiores ao benchmark de mercado, mesmo após o controle pelo risco sistemático.
+
+Adicionalmente, será calculado o índice de Sharpe, definido como a razão entre o retorno excedente médio das carteiras sobre a taxa livre de risco (Selic) e a volatilidade anualizada dos retornos. Essa métrica permite avaliar o retorno obtido por unidade de risco, sendo amplamente empregada em comparações de eficiência entre estratégias. Conforme a abordagem metodológica de @palazzo2018carteiras, este estudo não incorpora custos de transação nem efeitos tributários, com o intuito de isolar o impacto dos critérios fundamentais sobre o desempenho das carteiras. Todos os dividendos distribuídos pelas empresas serão reinvestidos integralmente ao longo do período analisado.
 
 
 # Resultados Esperados {#sec-esperados}
