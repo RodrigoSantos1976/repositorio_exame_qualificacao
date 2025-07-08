@@ -145,26 +145,54 @@ O estudo de @viana2024dividend avança ao adaptar e testar a metodologia Big Saf
 Embora o foco desta subseção seja a produção nacional, é relevante destacar a contribuição metodológica do estudo de @srivastava2020portfolio ao aplicar o modelo de Graham tanto ao Nifty 50 (Índia) quanto ao Dow Jones (EUA), no período de 2014 a 2020. Utilizando a fórmula de valor intrínseco revisada por Graham e um conjunto clássico de indicadores fundamentalistas, os autores construíram carteiras que superaram consistentemente a estratégia passiva de Buy and Hold em ambos os mercados, com destaque para os elevados Sharpe Ratios obtidos (1,31 na Índia e 1,72 nos EUA).
 
 
+A @tbl-1 contém uma síntese dos principais estudos sobre value investing no Brasil, destacando o período analisado, os objetivos, os resultados principais e a utilização do conceito de valor intrínseco. A tabela evidencia a evolução das pesquisas, desde as primeiras aplicações dos filtros de Graham até as adaptações mais recentes.
+
+::: {.landscape}
+
+```{r}
+#| label: tbl-1
+#| tbl-cap: "Estudos sobre Value Investing no Brasil e a Utilização do Conceito de Valor Intrínseco."
+
+# carrega pacotes necessários
+library(tidyverse)
+library(knitr)
+library(kableExtra)
 
 
-### Tabela 1. Estudos sobre Value Investing no Brasil e a Utilização do Conceito de Valor Intrínseco
+tab01 <- tribble(
+  ~`Autor(es)`, ~`Período`, ~`Objetivo`, ~`Resultados Principais`, ~`Valor Intrínseco`,
+  "Salgueiro (2007)", "2000–2006", "Aplicação dos filtros de Graham", "Retorno de 646% vs 227% do Ibovespa", "Filtros tradicionais como proxy do valor",
+  "Pinheiro & Passos (2009)", "2000–2007", "Filtros aderentes à obra de Graham", "Retorno de 566% vs 219% do Ibovespa", "Estrutura fiel à proposta original; sem cálculo direto",
+  "Almeida et al. (2011)", "1997–2011", "Filtros via quartis", "Metade das carteiras superou o Ibovespa", "Múltiplos compatíveis; sem cálculo direto",
+  "Holloway (2012)", "2008–2011", "Permanência em fundos", "ROA, lucros estáveis e margem bruta relevantes", "Aplicação indireta; fundamentos ligados ao valor",
+  "Palazzo et al. (2013)", "2003–2012", "Teste dos filtros", "Porte, liquidez e lucros consistentes foram mais eficazes", "Filtros como aproximação; sem métrica formal",
+  "Holloway (2013)", "2008–2011", "Seleção por fundamentos", "ROA, lucros estáveis e margem bruta decisivos", "Alinhado à lógica do valuation",
+  "Zeidler (2014)", "2002–2014", "Magic Formula", "Todas as carteiras superaram o Ibovespa", "Valor implícito: ROIC + earnings yield",
+  "Galdi & Lima (2016)", "2001–2011", "PEAD + filtros", "Surpresa de lucros melhora seleção", "Proxy de subavaliação; aplicação indireta",
+  "Palazzo et al. (2018)", "2005–2015", "Adaptação dos filtros", "Lucros consistentes e liquidez se destacaram", "Sem cálculo direto; reforça fundamentos",
+  "Almeida & Sales (2019)", "2009–2018", "Indicadores no IBrX-100", "P/L, P/VPA e VarLL entre os mais relevantes", "Proxies estatísticos; sem estimação formal",
+  "Rodrigues et al. (2021)", "2010–2019", "Hierarquização de filtros", "Melhor seleção com ranking; dividendos menos relevantes", "Valuation implícito; sem fórmula unificada",
+  "Conceição (2021)", "2006–2020", "Magic Formula e carteira", "Todas as carteiras superaram o benchmark", "Aproximação objetiva de valor",
+  "Batista (2022)", "2010–2021", "Graham vs. Magic", "Magic teve retornos anormais; ciclo relevante", "Comparação entre métricas de valor",
+  "Rossi Jr. (2022)", "2015–2020", "Rebalanceamento + setor", "Melhor desempenho ajustado ao risco", "Aproximação dinâmica entre preço e fundamentos"
+)
 
-| Autor(es)               | Período     | Objetivo                        | Resultados Principais                                         | Valor Intrínseco                                             |
-|-------------------------|-------------|----------------------------------|----------------------------------------------------------------|--------------------------------------------------------------|
-| Salgueiro (2007)        | 2000–2006   | Aplicação dos filtros de Graham | Retorno de 646% vs 227% do Ibovespa                           | Filtros tradicionais como proxy do valor                     |
-| Pinheiro & Passos (2009)| 2000–2007   | Filtros aderentes à obra de Graham | Retorno de 566% vs 219% do Ibovespa                        | Estrutura fiel à proposta original; sem cálculo direto       |
-| Almeida et al. (2011)   | 1997–2011   | Filtros via quartis             | Metade das carteiras superou o Ibovespa                      | Múltiplos compatíveis; sem cálculo direto                    |
-| Holloway (2012)         | 2008–2011   | Permanência em fundos           | ROA, lucros estáveis e margem bruta relevantes               | Aplicação indireta; fundamentos ligados ao valor             |
-| Palazzo et al. (2013)   | 2003–2012   | Teste dos filtros               | Porte, liquidez e lucros consistentes foram mais eficazes    | Filtros como aproximação; sem métrica formal                 |
-| Holloway (2013)         | 2008–2011   | Seleção por fundamentos         | ROA, lucros estáveis e margem bruta decisivos                | Alinhado à lógica do valuation                               |
-| Zeidler (2014)          | 2002–2014   | Magic Formula                   | Todas as carteiras superaram o Ibovespa                      | Valor implícito: ROIC + earnings yield                       |
-| Galdi & Lima (2016)     | 2001–2011   | PEAD + filtros                  | Surpresa de lucros melhora seleção                           | Proxy de subavaliação; aplicação indireta                    |
-| Palazzo et al. (2018)   | 2005–2015   | Adaptação dos filtros           | Lucros consistentes e liquidez se destacaram                 | Sem cálculo direto; reforça fundamentos                      |
-| Almeida & Sales (2019)  | 2009–2018   | Indicadores no IBrX-100         | P/L, P/VPA e VarLL entre os mais relevantes                  | Proxies estatísticos; sem estimação formal                   |
-| Rodrigues et al. (2021) | 2010–2019   | Hierarquização de filtros       | Melhor seleção com ranking; dividendos menos relevantes      | Valuation implícito; sem fórmula unificada                   |
-| Conceição (2021)        | 2006–2020   | Magic Formula e carteira        | Todas as carteiras superaram o benchmark                     | Aproximação objetiva de valor                                |
-| Batista (2022)          | 2010–2021   | Graham vs. Magic                | Magic teve retornos anormais; ciclo relevante                | Comparação entre métricas de valor                           |
-| Rossi Jr. (2022)        | 2015–2020   | Rebalanceamento + setor         | Melhor desempenho ajustado ao risco                          | Aproximação dinâmica entre preço e fundamentos               |
+# Cria a tabela usando o pacote kableExtra
+tab01 %>%
+  kable("latex",
+    booktabs = TRUE, 
+    longtable = TRUE,
+  ) %>%
+  kable_styling(
+    font_size = 8,
+    full_width = FALSE,
+    latex_options = c("repeat_header", "scale_down", "hold_position")) %>%
+  row_spec(0, bold = TRUE) %>%  # Linha 0 = cabeçalho em negrito
+  column_spec(3:5, width = "3cm")
+```
+
+::: 
+
 
 
 ## Lacunas de Pesquisa e Justificativa
@@ -266,20 +294,54 @@ Os dados serão obtidos da plataforma Economatica®, amplamente utilizada em pes
 O estudo adota como base os sete filtros originalmente propostos por Benjamin Graham, conforme adaptados por Palazzo (2018) para o mercado brasileiro:
 
 
+```{r}
+#| label: tbl-2
+#| tbl-cap: "Comparação entre os filtros de Graham (2007) e Palazzo et al. (2018)."
+#| echo: false
 
-::: {.tbl-caption style="text-align: center;"}
-**Tabela: Comparação entre os filtros de Graham (2007) e Palazzo et al. (2018)**
-:::
+# Usar data.frame em vez de tribble para melhor controle
+tab02 <- data.frame(
+  Numero = c(1, 2, 3, 4, 5, 6, 7),
+  Graham = c(
+    "Tamanho apropriado: receita mínima de US\\$ 100 milhões para empresas industriais e ativos totais de US\\$ 50 milhões para concessionárias.",
+    "Condição financeira forte: liquidez corrente (ativos circulantes ÷ passivo circulante) maior que 2; dívida de longo prazo inferior ao patrimônio líquido.",
+    "Dividendos ininterruptos por pelo menos 20 anos.",
+    "Sem prejuízos nos últimos 10 anos.",
+    "Crescimento mínimo de 1/3 no lucro por ação (LPA) nos últimos 10 anos.",
+    "P/L (Preço sobre Lucro) não deve exceder 15 vezes a média dos lucros dos últimos 3 anos.",
+    "P/VPA (Preço sobre Valor Patrimonial) não deve ser maior que 1{,}5."
+  ),
+  Palazzo = c(
+    "Receita operacional bruta anual ou anualizada superior a R\\$ 300 milhões.",
+    "Liquidez corrente superior a 1{,}22.",
+    "Dividendos ininterruptos por pelo menos 5 anos.",
+    "Lucros positivos nos últimos 5 anos.",
+    "Crescimento de lucros de pelo menos 2{,}66\\% ao ano.",
+    "P/L inferior a 7{,}0.",
+    "P/VPA inferior a 1{,}0."
+  )
+)
 
-| Nº | Critérios de Graham (2007)                                                                                                                                 | Critérios de Palazzo et al. (2018)                                                                                  |
-|----|------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| 1  | Tamanho apropriado: receita mínima de US$ 100 milhões para empresas industriais e ativos totais de US$ 50 milhões para concessionárias.                   | Receita operacional bruta anual ou anualizada superior a R$ 300 milhões.                                           |
-| 2  | Condição financeira forte: liquidez corrente (ativos circulantes ÷ passivo circulante) maior que 2; dívida de longo prazo inferior ao patrimônio líquido. | Liquidez corrente superior a 1,22.                                                                                  |
-| 3  | Dividendos ininterruptos por pelo menos 20 anos.                                                                                                          | Dividendos ininterruptos por pelo menos 5 anos.                                                                     |
-| 4  | Sem prejuízos nos últimos 10 anos.                                                                                                                        | Lucros positivos nos últimos 5 anos.                                                                                |
-| 5  | Crescimento mínimo de 1/3 no lucro por ação (LPA) nos últimos 10 anos.                                                                                    | Crescimento de lucros de pelo menos 2,66% ao ano.                                                                   |
-| 6  | P/L (Preço sobre Lucro) não deve exceder 15 vezes a média dos lucros dos últimos 3 anos.                                                                 | P/L inferior a 7,0.                                                                                                  |
-| 7  | P/VPA (Preço sobre Valor Patrimonial) não deve ser maior que 1,5.                                                                                        | P/VPA inferior a 1,0.                                                                   |
+# Nomear as colunas adequadamente
+colnames(tab02) <- c("Nº", "Critérios de Graham (2007)", "Critérios de Palazzo et al. (2018)")
+
+# Criar a tabela com formatação adequada
+tab02 %>%
+  kable("latex", 
+        booktabs = TRUE, 
+        align = c("c", "l", "l"),  # Alinhamento simples
+        escape = FALSE) %>%
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 11,  # Reduzir tamanho da fonte
+    full_width = TRUE  # Usar largura total disponível
+  ) %>%
+  row_spec(0, bold = TRUE) %>%  # Cabeçalho em negrito
+  column_spec(1, width = "1cm") %>%  # Largura da coluna de números
+  column_spec(2, width = "6.5cm") %>%  # Largura da coluna Graham
+  column_spec(3, width = "6.5cm")     # Largura da coluna Palazzo
+```
+
 
 
 A construção de uma carteira fundamentada em value investing exige critérios rigorosos de seleção que assegurem a robustez financeira, a previsibilidade dos resultados e a existência de margem de segurança. Entre os filtros adotados neste estudo, destacam-se: o faturamento mínimo de R$ 300 milhões, com o objetivo de restringir a amostra a empresas de maior porte e liquidez; o índice de liquidez corrente mínima, que sinaliza capacidade de solvência no curto prazo; e os filtros relacionados à consistência nos lucros e ao crescimento dos lucros, cuja referência baseia-se na proposta de Graham de evolução acumulada de 30% em uma década.
