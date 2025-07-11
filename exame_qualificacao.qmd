@@ -25,8 +25,8 @@ format:
     fig-dpi: 300
     fig-cap-location: bottom
     tbl-cap-location: top
-    lof: false
-    lot: false
+    lof: true
+    lot: true
     link-citations: true
 execute: 
   echo: false
@@ -57,7 +57,7 @@ Estudos anteriores, como os de @salgueiro2007comparacao, @pinheiro2009value, @ro
 
 Além da contribuição empírica, o presente trabalho também se propõe a gerar um impacto prático e educacional. Como parte dos resultados aplicados, será desenvolvido o GrahamLab, um aplicativo educacional interativo que permitirá a simulação e o acompanhamento do desempenho das carteiras formadas. A ferramenta visa democratizar o acesso ao conhecimento sobre estratégias de investimento baseadas em valor, tornando o conteúdo acessível a estudantes, professores e investidores iniciantes. O GrahamLab contribuirá, assim, para o fortalecimento da educação financeira com base em critérios técnicos e fundamentos de longo prazo.
 
-Além desta introdução, este documento está estruturado da seguinte forma: a @sec-revisao mostra a revisão da literatura realizada; a @sec-objetivos apresenta o objetivo geral (@sec-objgeral) e específicos (@sec-objespecficos);a @sec-metodologia descreve a metodologia proposta e os dados a serem utilizados. Por fim, a @sec-esperados aborda os resultados esperados da execução do projeto 
+Além desta introdução, este documento está estruturado da seguinte forma: a @sec-revisao mostra a revisão da literatura realizada; a @sec-objetivos apresenta o objetivo geral (@sec-objgeral) e específicos (@sec-objespecficos); a @sec-metodologia descreve a metodologia proposta e os dados a serem utilizados. Por fim, a @sec-esperados aborda os resultados esperados da execução do projeto 
 e a @sec-cronograma exibe um planejamento para a execução das próximas etapas do projeto.
 
 
@@ -119,7 +119,7 @@ A construção das carteiras seguiu uma lógica ingênua, selecionando as 10 aç
 
 Os resultados do estudo indicam que a aplicação dos filtros fundamentados no modelo de Graham foi, em grande parte, eficaz para gerar carteiras com desempenho superior ao Ibovespa no período de maio de 2005 a abril de 2015. Quando aplicados isoladamente, os filtros 3 (lucros ininterruptos por cinco anos), 5 (crescimento médio de lucros de 2,66% ao ano por 10 anos) e 7 (produto P/L x P/VP menor ou igual a 7) destacaram-se por proporcionar os maiores retornos e melhores índices de Sharpe, superando não apenas o benchmark de mercado, mas também a taxa Selic. O filtro 7, em particular, apresentou o maior índice de Sharpe (0,0637), o menor beta (0,6846) e o maior alpha (0,72), evidenciando-se como o critério mais eficiente quando aplicado de forma isolada.
 
-Entretanto, ao aplicar todos os sete filtros simultaneamente, observou-se uma carteira com retorno anualizado de 11,10% e volatilidade de 16,52%, superior ao Ibovespa em termos de risco-retorno ajustado. Para avaliar a contribuição individual de cada filtro dentro da seleção conjunta, os autores retiraram cada critério separadamente. Essa análise revelou que os filtros 2 (liquidez corrente) e 3 (lucros ininterruptos) foram os únicos cuja retirada causou queda significativa na performance da carteira, confirmando sua relevância. Já os filtros 1 (porte mínimo de R$ 300 milhões) e 6 (P/L ≤ 7) mostraram-se irrelevantes, pois sua exclusão não alterou a composição nem o desempenho da carteira, sugerindo que essas condições eram amplamente atendidas pelas empresas selecionadas pelos demais critérios. Curiosamente, os filtros 4 (pagamento contínuo de dividendos), 5 (crescimento decenal dos lucros) e 7 (P/L x P/VPA ≤ 7), que tiveram bom desempenho isoladamente, apresentaram efeito negativo quando utilizados em conjunto, gerando carteiras com desempenho superior quando foram retirados.
+Entretanto, ao aplicar todos os sete filtros simultaneamente, observou-se uma carteira com retorno anualizado de 11,10% e volatilidade de 16,52%, superior ao Ibovespa em termos de risco-retorno ajustado. Para avaliar a contribuição individual de cada filtro dentro da seleção conjunta, os autores retiraram cada critério separadamente. Essa análise revelou que os filtros 2 (liquidez corrente) e 3 (lucros ininterruptos) foram os únicos cuja retirada causou queda significativa na performance da carteira, confirmando sua relevância. Já os filtros 1 (porte mínimo de R$ 300 milhões) e 6 (P/L menor que 7) mostraram-se irrelevantes, pois sua exclusão não alterou a composição nem o desempenho da carteira, sugerindo que essas condições eram amplamente atendidas pelas empresas selecionadas pelos demais critérios. Curiosamente, os filtros 4 (pagamento contínuo de dividendos), 5 (crescimento decenal dos lucros) e 7 (P/L x P/VPA menor que 7), que tiveram bom desempenho isoladamente, apresentaram efeito negativo quando utilizados em conjunto, gerando carteiras com desempenho superior quando foram retirados.
 
 Dessa forma, o estudo evidencia que os critérios mais relevantes para o mercado brasileiro no período analisado foram aqueles relacionados à liquidez de curto prazo e à consistência nos lucros. A aplicação da metodologia de Graham, adaptada ao contexto nacional, resultou em carteiras com retornos ajustados ao risco superiores ao mercado, beta inferior a 1,00 e alpha positivo, reforçando a validade do value investing como estratégia eficaz no Brasil.
 
@@ -387,10 +387,7 @@ Adicionalmente, será calculado o índice de Sharpe, definido como a razão entr
 # Resultados Esperados {#sec-esperados}
 
 
-
-Espera-se que as carteiras construídas com base nos filtros de Graham adaptados ao mercado brasileiro, conforme propostos por Pallazo (2018), apresentem desempenho superior ao do índice de referência (Ibovespa), tanto em termos de retorno absoluto quanto de retorno ajustado ao risco, medido por indicadores como o índice de Sharpe e o alpha de Jensen.
-
-Com a introdução da nova métrica de valor intrínseco, derivada da fórmula clássica de Graham, o estudo busca verificar se essa abordagem apresenta maior eficácia na identificação de ativos subvalorizados. Assim, espera-se que as carteiras baseadas nesse novo critério:
+Espera-se que as carteiras construídas com base nos filtros de Graham adaptados ao mercado brasileiro, conforme propostos por @palazzo2018carteiras, apresentem desempenho superior ao do índice de referência (Ibovespa), tanto em termos de retorno absoluto quanto ajustado ao risco, mensurado por métricas como o índice de Sharpe e o alfa de Jensen. Com a introdução da fórmula clássica de valor intrínseco de Graham como métrica adicional, o estudo busca avaliar se essa abordagem é mais eficaz não apenas na identificação de ativos subvalorizados (entrada), mas também na determinação do momento adequado de saída, com base no custo de oportunidade representado pela margem de segurança residual. Dessa forma, espera-se que as carteiras que incorporam esse critério apresentem resultados superiores aos modelos tradicionais, em diferentes protocolos de rebalanceamento Assim, espera-se que as carteiras baseadas nesse novo critério:
 
 1- Alcancem retornos médios superiores aos das carteiras baseadas apenas nos múltiplos tradicionais (P/L, P/VPA, dividend yield);
 
